@@ -1,0 +1,2750 @@
+{
+  "name": "IMPORT,EXPORT,BACKUP 2",
+  "nodes": [
+    {
+      "parameters": {
+        "url": "https://88dc1b64a2edf718fd9d09d2785ad456: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@ullenboombaby.myshopify.com/admin/api/2021-10/smart_collections.json?limit=150",
+        "options": {}
+      },
+      "id": "48737fb9-f8cb-46f1-8855-ebbe4389e07e",
+      "name": "HTTP Request",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        660,
+        800
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://88dc1b64a2edf718fd9d09d2785ad456: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@ullenboombaby.myshopify.com/admin/api/2021-10/products.json",
+        "options": {}
+      },
+      "id": "708151b9-e234-46be-9ff1-91b05954eac8",
+      "name": "HTTP Request1",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        640,
+        160
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## Smart collections\n obtener collecciones de productos automaticos",
+        "height": 90.32192000000003,
+        "width": 347.3479679999998
+      },
+      "id": "62c49ba7-93b1-4898-b1e6-e494358b0419",
+      "name": "Sticky Note",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        640,
+        960
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## Products",
+        "height": 80
+      },
+      "id": "24dfb088-35b1-4fb3-962c-0f7213f81c1d",
+      "name": "Sticky Note1",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        600,
+        320
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "toFile",
+        "fileFormat": "csv",
+        "options": {}
+      },
+      "id": "297504be-521a-42be-a1c5-2380f71569a1",
+      "name": "Spreadsheet File1",
+      "type": "n8n-nodes-base.spreadsheetFile",
+      "typeVersion": 1,
+      "position": [
+        1140,
+        240
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://b1ba016d6f3d08541490a71388849282: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@aventuramusica.myshopify.com/admin/api/2021-10/orders.json?status=any",
+        "options": {}
+      },
+      "id": "ade4e4e6-18bc-45d0-9d9d-29bccf25b721",
+      "name": "HTTP Request2",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        640,
+        -160
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## Orders",
+        "height": 80
+      },
+      "id": "c3694c98-965d-41ad-a955-bc306cf68d9e",
+      "name": "Sticky Note2",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        580,
+        20
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "toFile",
+        "fileFormat": "csv",
+        "options": {
+          "fileName": "orders.csv"
+        }
+      },
+      "id": "38a53b47-cd4c-4ef1-acd2-604274102ff6",
+      "name": "Spreadsheet File2",
+      "type": "n8n-nodes-base.spreadsheetFile",
+      "typeVersion": 1,
+      "position": [
+        1080,
+        -160
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://b1ba016d6f3d08541490a71388849282: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@aventuramusica.myshopify.com/admin/api/2021-10/customers.json",
+        "options": {}
+      },
+      "id": "138eeaf9-2042-46b4-af4d-fae19f326aa7",
+      "name": "HTTP Request3",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        660,
+        1100
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## Custumers",
+        "height": 80
+      },
+      "id": "8c6204d9-e2e2-4198-a04e-ce66c332d284",
+      "name": "Sticky Note3",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        700,
+        1300
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "toFile",
+        "fileFormat": "csv",
+        "options": {}
+      },
+      "id": "fa28d208-7c56-46b0-a261-51bb21171574",
+      "name": "Spreadsheet File3",
+      "type": "n8n-nodes-base.spreadsheetFile",
+      "typeVersion": 1,
+      "position": [
+        1120,
+        1260
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://b1ba016d6f3d08541490a71388849282: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@aventuramusica.myshopify.com/admin/api/2021-10/price_rules.json",
+        "options": {}
+      },
+      "id": "5dfd38fb-d6d7-48ff-988d-95b1a10c7741",
+      "name": "HTTP Request4",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        640,
+        1480
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## Discounts \nsolo es el titulo del descuento.\nNo tiene metafield",
+        "height": 98.57945600000005
+      },
+      "id": "6e73cffb-421f-4554-8f6d-6e2888cc1474",
+      "name": "Sticky Note4",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        620,
+        1700
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "toFile",
+        "fileFormat": "csv",
+        "options": {}
+      },
+      "id": "5cadc998-20f4-48b4-a724-3f37a4948508",
+      "name": "Spreadsheet File4",
+      "type": "n8n-nodes-base.spreadsheetFile",
+      "typeVersion": 1,
+      "position": [
+        1100,
+        1480
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://88dc1b64a2edf718fd9d09d2785ad456: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@ullenboombaby.myshopify.com/admin/api/2021-10/custom_collections.json?limit=150",
+        "options": {}
+      },
+      "id": "ff493c10-e251-4b92-a525-f2ddbc6e1dfd",
+      "name": "HTTP Request6",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        660,
+        420
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## Custom collections\nson colecciones que se ingresan manualmente",
+        "height": 132.83479396026485
+      },
+      "id": "07324f04-cce6-4f6e-89f4-3110ddf70eda",
+      "name": "Sticky Note5",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        600,
+        580
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://b1ba016d6f3d08541490a71388849282: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@aventuramusica.myshopify.com/admin/api/2021-10/marketing_events.json",
+        "options": {}
+      },
+      "id": "21286e9c-df34-4a6c-91cd-ebf787f65b2c",
+      "name": "HTTP Request7",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        660,
+        1840
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "a6b58d31-2789-41ff-9402-ae1fc7495c69",
+      "name": "Spreadsheet File6",
+      "type": "n8n-nodes-base.spreadsheetFile",
+      "typeVersion": 1,
+      "position": [
+        1180,
+        1840
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## Marketing",
+        "height": 80
+      },
+      "id": "30b4cefe-d1a5-4427-ac04-270307fd6e8b",
+      "name": "Sticky Note6",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        640,
+        2000
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "33648694-38dc-4a20-924d-9e5378460116",
+      "name": "Merge",
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 2,
+      "position": [
+        1600,
+        600
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "toFile",
+        "fileFormat": "csv",
+        "options": {
+          "fileName": "collections.csv"
+        }
+      },
+      "id": "fe902e24-16b7-427b-91e2-16e386a7132f",
+      "name": "Spreadsheet File",
+      "type": "n8n-nodes-base.spreadsheetFile",
+      "typeVersion": 1,
+      "position": [
+        1900,
+        600
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "4fb06797-d6cb-476f-a6d6-0888e70b32d6",
+      "name": "When clicking \"Execute Workflow\"",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        2160,
+        2680
+      ],
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "url": "https://b1ba016d6f3d08541490a71388849282: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@aventuramusica.myshopify.com/admin/api/2021-10/reports.json?since_id=10",
+        "options": {}
+      },
+      "id": "354f5d05-0e79-414b-8132-300947fb855f",
+      "name": "HTTP Request8",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        660,
+        2340
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## reports",
+        "height": 80
+      },
+      "id": "32e56322-bc0f-414b-bd40-347d249e1dca",
+      "name": "Sticky Note7",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        620,
+        2520
+      ]
+    },
+    {
+      "parameters": {
+        "content": "faltaria agragar content",
+        "height": 95.17350993377478
+      },
+      "id": "36ff18f0-f603-4822-83ec-d6be56185c50",
+      "name": "Sticky Note8",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        640,
+        2180
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## EXPORT",
+        "height": 80
+      },
+      "id": "f0391722-104c-4339-8fac-31350893be00",
+      "name": "Sticky Note9",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        680,
+        -360
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "toFile",
+        "fileFormat": "csv",
+        "options": {}
+      },
+      "id": "07cf840e-27f9-4e4f-b54e-a23c701f059f",
+      "name": "Spreadsheet File5",
+      "type": "n8n-nodes-base.spreadsheetFile",
+      "typeVersion": 1,
+      "position": [
+        1100,
+        2340
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://b1ba016d6f3d08541490a71388849282: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@aventuramusica.myshopify.com/admin/api/2021-10/orders.json",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {}
+          ]
+        },
+        "options": {}
+      },
+      "id": "a8ee4b6e-1cd7-4bc5-836a-dc3fb47f341b",
+      "name": "HTTP Request9",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        5300,
+        -140
+      ]
+    },
+    {
+      "parameters": {
+        "filePath": "/Users/enavarrete/Downloads/shopify/orders.csv",
+        "dataPropertyName": "=data"
+      },
+      "id": "09f7ee5a-f442-4f10-be2b-b408201fc572",
+      "name": "Read Binary File",
+      "type": "n8n-nodes-base.readBinaryFile",
+      "typeVersion": 1,
+      "position": [
+        4620,
+        -140
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## IMPORT",
+        "height": 80
+      },
+      "id": "0ed8c47f-3885-4fb4-a548-ebe8916d0b9e",
+      "name": "Sticky Note10",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        4720,
+        -360
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "8f68b5a5-16b0-4711-8457-98af3df72f03",
+      "name": "Spreadsheet File7",
+      "type": "n8n-nodes-base.spreadsheetFile",
+      "typeVersion": 1,
+      "position": [
+        4880,
+        -140
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://b1ba016d6f3d08541490a71388849282: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@aventuramusica.myshopify.com/admin/api/2021-10/products.json",
+        "options": {}
+      },
+      "id": "1f646a93-bc4a-4c88-9f31-1d1b840f29d3",
+      "name": "HTTP Request10",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        5440,
+        300
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "f477865c-66e9-4b97-aced-16ee1af65788",
+      "name": "Read Binary File2",
+      "type": "n8n-nodes-base.readBinaryFile",
+      "typeVersion": 1,
+      "position": [
+        4620,
+        280
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "bc51e90b-d197-428e-ba07-7414b6690278",
+      "name": "Spreadsheet File8",
+      "type": "n8n-nodes-base.spreadsheetFile",
+      "typeVersion": 1,
+      "position": [
+        4880,
+        280
+      ]
+    },
+    {
+      "parameters": {
+        "keepOnlySet": true,
+        "options": {}
+      },
+      "id": "c25ba5f2-c11e-4dc8-b265-728547028876",
+      "name": "Set4",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        5140,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## PRODUCTS",
+        "height": 80
+      },
+      "id": "ef6d30dc-5a36-4602-b40a-02a17b2a423e",
+      "name": "Sticky Note11",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        4580,
+        440
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## CUSTOMERS",
+        "height": 80
+      },
+      "id": "623a9bc6-f0a6-4e7a-afae-639338476dbb",
+      "name": "Sticky Note12",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        4540,
+        760
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## ORDERS",
+        "height": 80
+      },
+      "id": "e2a187bf-1115-4659-9034-54591d432ea4",
+      "name": "Sticky Note15",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        4620,
+        20
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://b1ba016d6f3d08541490a71388849282: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@aventuramusica.myshopify.com/admin/api/2021-10/orders.json",
+        "options": {}
+      },
+      "id": "c5c67da6-c289-4d2c-b43e-72ca3d6e25ae",
+      "name": "HTTP Request11",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        5440,
+        600
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "b278316a-266a-442e-a1a6-8b419a22846e",
+      "name": "Read Binary File1",
+      "type": "n8n-nodes-base.readBinaryFile",
+      "typeVersion": 1,
+      "position": [
+        4620,
+        600
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "0954cafa-1c81-4498-bb01-4782a004e9c6",
+      "name": "Spreadsheet File9",
+      "type": "n8n-nodes-base.spreadsheetFile",
+      "typeVersion": 1,
+      "position": [
+        4900,
+        600
+      ]
+    },
+    {
+      "parameters": {
+        "keepOnlySet": true,
+        "options": {}
+      },
+      "id": "17d4acdc-5da1-469b-8d70-71bea3146e1c",
+      "name": "Set5",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        5160,
+        600
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://b1ba016d6f3d08541490a71388849282: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@aventuramusica.myshopify.com/admin/api/2021-10/marketing_events.json",
+        "options": {}
+      },
+      "id": "6e248777-1764-4c1e-b091-a2a44bc2a676",
+      "name": "HTTP Request12",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        5420,
+        1100
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "fc9b93c3-bde2-4f43-a7c5-a6f8d5df260a",
+      "name": "Read Binary File3",
+      "type": "n8n-nodes-base.readBinaryFile",
+      "typeVersion": 1,
+      "position": [
+        4600,
+        1100
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "82945937-9911-44b2-b277-564129e6a5be",
+      "name": "Spreadsheet File10",
+      "type": "n8n-nodes-base.spreadsheetFile",
+      "typeVersion": 1,
+      "position": [
+        4860,
+        1100
+      ]
+    },
+    {
+      "parameters": {
+        "keepOnlySet": true,
+        "options": {}
+      },
+      "id": "20211d70-e7ea-4866-8073-c2b92adc7268",
+      "name": "Set6",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        5120,
+        1100
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## FALTARIA CONTENT\npodria agregarse metefield \n"
+      },
+      "id": "80ee5d5c-768f-4de1-b0f7-1c7486138e12",
+      "name": "Sticky Note16",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        4520,
+        860
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## MARKETING EVENTS\n",
+        "height": 100.52607999999991
+      },
+      "id": "48d3f151-08e3-4a13-8b8d-78d71c988b0e",
+      "name": "Sticky Note17",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        4580,
+        1300
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://b1ba016d6f3d08541490a71388849282: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@aventuramusica.myshopify.com/admin/api/2021-10/price_rules.jsonhttps://b1ba016d6f3d08541490a71388849282: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@aventuramusica.myshopify.com/admin/api/2021-10/orders.json",
+        "options": {}
+      },
+      "id": "c5e5a29d-fb4b-4024-8ff8-931cb992dc64",
+      "name": "HTTP Request13",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        5420,
+        1540
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "6dc2c2b9-c42b-4f32-a0a0-59e25539aeb9",
+      "name": "Read Binary File4",
+      "type": "n8n-nodes-base.readBinaryFile",
+      "typeVersion": 1,
+      "position": [
+        4620,
+        1540
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "77ecde1a-1b2b-451f-89c0-b773296ed6be",
+      "name": "Spreadsheet File11",
+      "type": "n8n-nodes-base.spreadsheetFile",
+      "typeVersion": 1,
+      "position": [
+        4880,
+        1540
+      ]
+    },
+    {
+      "parameters": {
+        "keepOnlySet": true,
+        "options": {}
+      },
+      "id": "3240b4eb-1b4f-436d-b913-94068ba02a78",
+      "name": "Set7",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        5100,
+        1540
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## DISCOUNTS",
+        "height": 80
+      },
+      "id": "baaf3b16-beb3-4c52-a727-9484202f0ddc",
+      "name": "Sticky Note19",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        4580,
+        1720
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://b1ba016d6f3d08541490a71388849282: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@aventuramusica.myshopify.com/admin/api/2021-10/price_rules/{{ $json.price_rule.id }}/discount_codes.json",
+        "options": {}
+      },
+      "id": "d6b9651a-2151-4d34-81ed-442b2b3bebde",
+      "name": "HTTP Request14",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        5640,
+        1540
+      ]
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "custom_collections",
+        "options": {}
+      },
+      "id": "3d74985b-90d5-479c-990f-a0a86237f67c",
+      "name": "Item Lists",
+      "type": "n8n-nodes-base.itemLists",
+      "typeVersion": 1,
+      "position": [
+        960,
+        420
+      ]
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "smart_collections",
+        "options": {}
+      },
+      "id": "3f8aabbc-4340-499f-ba31-12fe969f6969",
+      "name": "Item Lists1",
+      "type": "n8n-nodes-base.itemLists",
+      "typeVersion": 1,
+      "position": [
+        980,
+        800
+      ]
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "orders",
+        "options": {}
+      },
+      "id": "93642fdd-b030-42e7-91bb-5a7347d0f8ac",
+      "name": "Item Lists2",
+      "type": "n8n-nodes-base.itemLists",
+      "typeVersion": 1,
+      "position": [
+        860,
+        -180
+      ]
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "products",
+        "options": {}
+      },
+      "id": "4d8c4f0b-8577-4b57-9f4d-ac121a078cee",
+      "name": "Item Lists3",
+      "type": "n8n-nodes-base.itemLists",
+      "typeVersion": 1,
+      "position": [
+        900,
+        160
+      ]
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "customers",
+        "options": {}
+      },
+      "id": "c4618237-2f50-4fcf-88a1-17f30076b21c",
+      "name": "Item Lists4",
+      "type": "n8n-nodes-base.itemLists",
+      "typeVersion": 1,
+      "position": [
+        880,
+        1100
+      ]
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "price_rules",
+        "options": {}
+      },
+      "id": "f1bfda31-3aaa-439e-9289-1b780ea18d38",
+      "name": "Item Lists5",
+      "type": "n8n-nodes-base.itemLists",
+      "typeVersion": 1,
+      "position": [
+        860,
+        1480
+      ]
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "marketing_events",
+        "options": {}
+      },
+      "id": "ba9eec85-7d61-45c3-988f-4a9728837332",
+      "name": "Item Lists6",
+      "type": "n8n-nodes-base.itemLists",
+      "typeVersion": 1,
+      "position": [
+        880,
+        1840
+      ]
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "reports",
+        "options": {}
+      },
+      "id": "69d77a95-ee46-44af-b830-3fa25906dcbe",
+      "name": "Item Lists7",
+      "type": "n8n-nodes-base.itemLists",
+      "typeVersion": 1,
+      "position": [
+        880,
+        2340
+      ]
+    },
+    {
+      "parameters": {
+        "url": "=https://b1ba016d6f3d08541490a71388849282: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@aventuramusica.myshopify.com/admin/api/2021-10/products/{{ $json.id }}/metafields.json ",
+        "options": {}
+      },
+      "id": "e75b2d89-692d-4ebf-aa92-6dc065b26a4d",
+      "name": "HTTP Request5",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        1140,
+        40
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## Metafield of products",
+        "height": 96.51507200000003
+      },
+      "id": "f07adcbb-9f4a-430b-bdf3-525a4934bd73",
+      "name": "Sticky Note13",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1280,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "metafields",
+        "options": {}
+      },
+      "id": "4c6ff5d9-84d9-4294-b6f0-61b98fb525c7",
+      "name": "Item Lists10",
+      "type": "n8n-nodes-base.itemLists",
+      "typeVersion": 1,
+      "position": [
+        1560,
+        40
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "toFile",
+        "fileFormat": "csv",
+        "options": {}
+      },
+      "id": "0410d5aa-dd81-4096-9037-27515e273dee",
+      "name": "Spreadsheet File14",
+      "type": "n8n-nodes-base.spreadsheetFile",
+      "typeVersion": 1,
+      "position": [
+        1820,
+        40
+      ]
+    },
+    {
+      "parameters": {
+        "url": "=https://88dc1b64a2edf718fd9d09d2785ad456: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@ullenboombaby.myshopify.com/admin/api/2021-10/collections/{{ $json.id }}/metafields.json",
+        "options": {}
+      },
+      "id": "4e039220-94d3-418c-8afc-fc705a93b0a3",
+      "name": "HTTP Request16",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        1900,
+        420
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## Metafield of collections",
+        "height": 96.51507200000003
+      },
+      "id": "5e84f4be-80f2-4a64-b007-6b3651baa7eb",
+      "name": "Sticky Note14",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1820,
+        360
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "toFile",
+        "fileFormat": "csv",
+        "options": {}
+      },
+      "id": "d11faca9-5a1a-47df-b7f2-3ffe56fecf2b",
+      "name": "Spreadsheet File15",
+      "type": "n8n-nodes-base.spreadsheetFile",
+      "typeVersion": 1,
+      "position": [
+        2320,
+        420
+      ]
+    },
+    {
+      "parameters": {
+        "url": "=https://b1ba016d6f3d08541490a71388849282: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@aventuramusica.myshopify.com/admin/api/2021-10/customers/{{ $json.id }}/metafields.json ",
+        "options": {}
+      },
+      "id": "ff3fa750-851a-4fb5-a1af-471f2077ab0c",
+      "name": "HTTP Request17",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        1120,
+        1040
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "toFile",
+        "fileFormat": "csv",
+        "options": {}
+      },
+      "id": "79cb7b65-48f5-4ad4-b59c-aa8329ec0d6d",
+      "name": "Spreadsheet File16",
+      "type": "n8n-nodes-base.spreadsheetFile",
+      "typeVersion": 1,
+      "position": [
+        1520,
+        1040
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## Metafield of customers",
+        "height": 96.51507200000003
+      },
+      "id": "80283eba-d798-4a34-9982-16c91391473b",
+      "name": "Sticky Note18",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1240,
+        980
+      ]
+    },
+    {
+      "parameters": {
+        "url": "=https://b1ba016d6f3d08541490a71388849282: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@aventuramusica.myshopify.com/admin/api/2021-10/products/{{ $json.id }}/images.json ",
+        "options": {}
+      },
+      "id": "20927397-9d97-4341-8a86-aee49b1aadeb",
+      "name": "HTTP Request15",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        1500,
+        200
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## IMAGE PRODUCTS\n** SOLO DA EL URL **",
+        "height": 80
+      },
+      "id": "e3bf8e25-6b11-4de3-96f4-43247fc3a5f6",
+      "name": "Sticky Note20",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1740,
+        220
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://b1ba016d6f3d08541490a71388849282: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@aventuramusica.myshopify.com/admin/api/2021-10/orders.json?status=any",
+        "options": {}
+      },
+      "id": "15135cd8-62b6-4d8d-9de6-8fada2f56bbf",
+      "name": "HTTP Request18",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        2660,
+        -160
+      ]
+    },
+    {
+      "parameters": {
+        "filePath": "/Users/enavarrete/Documents/pruebashopify/orders.csv"
+      },
+      "id": "fc0a34c3-13f0-4338-8e66-a0ba4dd62dd9",
+      "name": "Read Binary File5",
+      "type": "n8n-nodes-base.readBinaryFile",
+      "typeVersion": 1,
+      "position": [
+        2780,
+        40
+      ]
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "orders",
+        "options": {}
+      },
+      "id": "bf490350-e6f8-4f86-b8b4-21c33372d1c0",
+      "name": "Item Lists8",
+      "type": "n8n-nodes-base.itemLists",
+      "typeVersion": 1,
+      "position": [
+        2880,
+        -160
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "0f4dd98c-ad20-4fba-83e5-de3eec6640a8",
+      "name": "Spreadsheet File12",
+      "type": "n8n-nodes-base.spreadsheetFile",
+      "typeVersion": 1,
+      "position": [
+        2940,
+        40
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Obtener los datos del item list y del spreadsheet\nconst itemsData = items[0].json;\nconst sheetData = items[1].json;\n\n// Obtener los valores de la propiedad \"name\"\nconst itemName = itemsData.order_number;\nconst sheetName = sheetData['order_number'];\n// Obtener los valores de la propiedad \"name\"\nconst itemName1 = itemName.toString();\nconst sheetName1 = sheetName.toString();\n\n// Comparar los valores de la propiedad \"name\"\nif (itemName1 === sheetName1) {\n  // Si los nombres son iguales, no hacer nada\n  return [];\n} else {\n  // Si los nombres son diferentes, devolver el objeto JSON del item list\n  const itemValues = Object.values(itemsData);\n  return [{ json: itemsData }];\n}"
+      },
+      "id": "475cd3cb-28d7-4485-bb16-b3e16bc2e205",
+      "name": "Code",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        3200,
+        -80
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## Orders\nsolo falta agregar el que se actualice el archivo",
+        "height": 106.32601599999995
+      },
+      "id": "b1ee5bc6-350e-42ab-98cf-fe492601cbd0",
+      "name": "Sticky Note21",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        2760,
+        220
+      ]
+    },
+    {
+      "parameters": {
+        "filePath": "/Users/enavarrete/Documents/pruebashopify/orders.csv"
+      },
+      "id": "fcfdb3a0-9e5f-4840-a224-d913f7b79940",
+      "name": "Read Binary File6",
+      "type": "n8n-nodes-base.readBinaryFile",
+      "typeVersion": 1,
+      "position": [
+        2780,
+        640
+      ]
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "orders",
+        "options": {}
+      },
+      "id": "cadbe0b5-7b4c-42b2-a113-642c5892017c",
+      "name": "Item Lists9",
+      "type": "n8n-nodes-base.itemLists",
+      "typeVersion": 1,
+      "position": [
+        3000,
+        440
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "6f0634c3-4373-4a8f-a476-dc2a2221cdfc",
+      "name": "Spreadsheet File13",
+      "type": "n8n-nodes-base.spreadsheetFile",
+      "typeVersion": 1,
+      "position": [
+        3000,
+        640
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Obtener los datos del item list y del spreadsheet\nconst itemsData = items[0].json;\nconst sheetData = items[1].json;\n\n// Obtener los valores de la propiedad \"name\"\nconst itemName = itemsData.order_number;\nconst sheetName = sheetData['order_number'];\n\n// Comparar los valores de la propiedad \"name\"\nif (itemName === sheetName) {\n  // Si los nombres son iguales, no hacer nada\n  return [];\n   \n\n} else {\n  // Si los nombres son diferentes, devolver el objeto JSON del item list\n   return [{ json: itemsData }];\n}"
+      },
+      "id": "54d8c174-e8bc-4b70-9e2e-de413630d616",
+      "name": "Code1",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        3340,
+        560
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## Products \nsolo falta agregar el que se actualice el archivo",
+        "height": 106.32601599999995
+      },
+      "id": "3a003af3-394a-4782-9485-88fb67bc81f9",
+      "name": "Sticky Note22",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        2760,
+        820
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://b1ba016d6f3d08541490a71388849282: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@aventuramusica.myshopify.com/admin/api/2021-10/products.json",
+        "options": {}
+      },
+      "id": "f467982d-fb01-413b-b587-38d1efa465b7",
+      "name": "HTTP Request19",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        2780,
+        440
+      ]
+    },
+    {
+      "parameters": {
+        "filePath": "/Users/enavarrete/Documents/pruebashopify/orders.csv"
+      },
+      "id": "3a202e5d-bba8-4a62-afec-08f29bc600bd",
+      "name": "Read Binary File7",
+      "type": "n8n-nodes-base.readBinaryFile",
+      "typeVersion": 1,
+      "position": [
+        2800,
+        1320
+      ]
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "orders",
+        "options": {}
+      },
+      "id": "3712fee1-956e-4826-8e8d-9d6f9b3389bf",
+      "name": "Item Lists11",
+      "type": "n8n-nodes-base.itemLists",
+      "typeVersion": 1,
+      "position": [
+        3020,
+        1120
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "f5a90e83-4968-4cb0-bbf3-7904f726e93e",
+      "name": "Spreadsheet File17",
+      "type": "n8n-nodes-base.spreadsheetFile",
+      "typeVersion": 1,
+      "position": [
+        3020,
+        1320
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Obtener los datos del item list y del spreadsheet\nconst itemsData = items[0].json;\nconst sheetData = items[1].json;\n\n// Obtener los valores de la propiedad \"name\"\nconst itemName = itemsData.order_number;\nconst sheetName = sheetData['order_number'];\n\n// Comparar los valores de la propiedad \"name\"\nif (itemName === sheetName) {\n  // Si los nombres son iguales, no hacer nada\n  return [];\n   \n\n} else {\n  // Si los nombres son diferentes, devolver el objeto JSON del item list\n   return [{ json: itemsData }];\n}"
+      },
+      "id": "98e63186-65be-4a42-94ec-00ada23d744b",
+      "name": "Code2",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        3360,
+        1240
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## Customers\nsolo falta agregar el que se actualice el archivo",
+        "height": 106.32601599999995
+      },
+      "id": "6dda6ebd-ca60-435a-9fe7-70456297daac",
+      "name": "Sticky Note23",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        2780,
+        1500
+      ]
+    },
+    {
+      "parameters": {
+        "filePath": "/Users/enavarrete/Documents/pruebashopify/orders.csv"
+      },
+      "id": "946c9d42-291f-4647-9a42-27b1b82cf36b",
+      "name": "Read Binary File8",
+      "type": "n8n-nodes-base.readBinaryFile",
+      "typeVersion": 1,
+      "position": [
+        2800,
+        2000
+      ]
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "orders",
+        "options": {}
+      },
+      "id": "efb3f58e-d197-4481-bc0a-bc7237ed3a4b",
+      "name": "Item Lists12",
+      "type": "n8n-nodes-base.itemLists",
+      "typeVersion": 1,
+      "position": [
+        3020,
+        1800
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "1e906a59-c778-497a-a53c-7aa7d14b7c67",
+      "name": "Spreadsheet File18",
+      "type": "n8n-nodes-base.spreadsheetFile",
+      "typeVersion": 1,
+      "position": [
+        3020,
+        2000
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Obtener los datos del item list y del spreadsheet\nconst itemsData = items[0].json;\nconst sheetData = items[1].json;\n\n// Obtener los valores de la propiedad \"name\"\nconst itemName = itemsData.order_number;\nconst sheetName = sheetData['order_number'];\n\n// Comparar los valores de la propiedad \"name\"\nif (itemName === sheetName) {\n  // Si los nombres son iguales, no hacer nada\n  return [];\n   \n\n} else {\n  // Si los nombres son diferentes, devolver el objeto JSON del item list\n   return [{ json: itemsData }];\n}"
+      },
+      "id": "b2b2b08c-63d5-4a34-a526-0014880c311b",
+      "name": "Code3",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        3360,
+        1920
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## Discounts\nsolo falta agregar el que se actualice el archivo",
+        "height": 106.32601599999995
+      },
+      "id": "626cd9ad-c2ee-415e-90a9-1ff548f397cd",
+      "name": "Sticky Note24",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        2780,
+        2180
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://b1ba016d6f3d08541490a71388849282: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@aventuramusica.myshopify.com/admin/api/2021-10/customers.json",
+        "options": {}
+      },
+      "id": "9955a16a-5ea7-4f59-9d0d-6035cf21cdd8",
+      "name": "HTTP Request20",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        2800,
+        1120
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://b1ba016d6f3d08541490a71388849282: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@aventuramusica.myshopify.com/admin/api/2021-10/price_rules.json",
+        "options": {}
+      },
+      "id": "94786b9b-6aa5-4c76-9f9b-fb0cc4f87146",
+      "name": "HTTP Request21",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        2800,
+        1800
+      ]
+    },
+    {
+      "parameters": {
+        "filePath": "/Users/enavarrete/Documents/pruebashopify/orders.csv"
+      },
+      "id": "e3d95099-1457-481a-82b2-285f74ce3f15",
+      "name": "Read Binary File9",
+      "type": "n8n-nodes-base.readBinaryFile",
+      "typeVersion": 1,
+      "position": [
+        2820,
+        2600
+      ]
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "orders",
+        "options": {}
+      },
+      "id": "3a813e7f-0e3c-4a66-a293-95efe6e6ea47",
+      "name": "Item Lists13",
+      "type": "n8n-nodes-base.itemLists",
+      "typeVersion": 1,
+      "position": [
+        3040,
+        2400
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "818e4bc1-e8ec-41d5-8c8a-0d2fb1489223",
+      "name": "Spreadsheet File19",
+      "type": "n8n-nodes-base.spreadsheetFile",
+      "typeVersion": 1,
+      "position": [
+        3040,
+        2600
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Obtener los datos del item list y del spreadsheet\nconst itemsData = items[0].json;\nconst sheetData = items[1].json;\n\n// Obtener los valores de la propiedad \"name\"\nconst itemName = itemsData.order_number;\nconst sheetName = sheetData['order_number'];\n\n// Comparar los valores de la propiedad \"name\"\nif (itemName === sheetName) {\n  // Si los nombres son iguales, no hacer nada\n  return [];\n   \n\n} else {\n  // Si los nombres son diferentes, devolver el objeto JSON del item list\n   return [{ json: itemsData }];\n}"
+      },
+      "id": "afc02d93-2666-416b-ba2b-40b6a54fa1de",
+      "name": "Code4",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        3380,
+        2520
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## Marketing\nsolo falta agregar el que se actualice el archivo",
+        "height": 106.32601599999995
+      },
+      "id": "d71e8f4c-cb4b-4a0a-80cf-247e7f9bf8a7",
+      "name": "Sticky Note25",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        2800,
+        2780
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://b1ba016d6f3d08541490a71388849282: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@aventuramusica.myshopify.com/admin/api/2021-10/marketing_events.json",
+        "options": {}
+      },
+      "id": "a065b45e-bf7a-47eb-9d2c-223d4655514e",
+      "name": "HTTP Request22",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        2820,
+        2400
+      ]
+    },
+    {
+      "parameters": {
+        "filePath": "/Users/enavarrete/Documents/pruebashopify/orders.csv"
+      },
+      "id": "cba608d5-d8b8-4ad0-9620-ccfbad254709",
+      "name": "Read Binary File10",
+      "type": "n8n-nodes-base.readBinaryFile",
+      "typeVersion": 1,
+      "position": [
+        2820,
+        3180
+      ]
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "orders",
+        "options": {}
+      },
+      "id": "ed15b8e1-1f82-4f73-89b1-c54e6d247ee7",
+      "name": "Item Lists14",
+      "type": "n8n-nodes-base.itemLists",
+      "typeVersion": 1,
+      "position": [
+        3040,
+        2980
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "e0e003f4-0cd8-470f-a1ba-4efa66fbda37",
+      "name": "Spreadsheet File20",
+      "type": "n8n-nodes-base.spreadsheetFile",
+      "typeVersion": 1,
+      "position": [
+        3040,
+        3180
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Obtener los datos del item list y del spreadsheet\nconst itemsData = items[0].json;\nconst sheetData = items[1].json;\n\n// Obtener los valores de la propiedad \"name\"\nconst itemName = itemsData.order_number;\nconst sheetName = sheetData['order_number'];\n\n// Comparar los valores de la propiedad \"name\"\nif (itemName === sheetName) {\n  // Si los nombres son iguales, no hacer nada\n  return [];\n   \n\n} else {\n  // Si los nombres son diferentes, devolver el objeto JSON del item list\n   return [{ json: itemsData }];\n}"
+      },
+      "id": "113d80b8-568a-46b4-940e-1feee5c83962",
+      "name": "Code5",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        3380,
+        3100
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## Reports\nsolo falta agregar el que se actualice el archivo",
+        "height": 106.32601599999995
+      },
+      "id": "214c2cdb-e2b8-467d-9a77-7a2f883b5244",
+      "name": "Sticky Note26",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        2800,
+        3360
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://b1ba016d6f3d08541490a71388849282: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@aventuramusica.myshopify.com/admin/api/2021-10/reports.json?since_id=10",
+        "options": {}
+      },
+      "id": "0d80870e-9b82-4d42-a618-277d1be32f33",
+      "name": "HTTP Request24",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        2760,
+        2980
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## Backup\n",
+        "height": 80
+      },
+      "id": "1cc5c740-ed2d-40fa-a639-f63c083f8eb9",
+      "name": "Sticky Note28",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        2780,
+        -340
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "toFile",
+        "fileFormat": "csv",
+        "options": {
+          "fileName": "orders.csv"
+        }
+      },
+      "id": "ffa3a3a5-e295-47d0-ac91-8fdb99eafb82",
+      "name": "Spreadsheet File21",
+      "type": "n8n-nodes-base.spreadsheetFile",
+      "typeVersion": 1,
+      "position": [
+        3680,
+        -60
+      ]
+    },
+    {
+      "parameters": {
+        "fileName": "/Users/enavarrete/Documents/pruebashopify/orders.csv",
+        "options": {
+          "append": "={{ true }}"
+        }
+      },
+      "id": "4a777fe3-dd9e-4ed1-bea3-6387f65d0e87",
+      "name": "Write Binary File",
+      "type": "n8n-nodes-base.writeBinaryFile",
+      "typeVersion": 1,
+      "position": [
+        3880,
+        -40
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "7eca571a-104a-4f9c-988c-76bf2d340d41",
+      "name": "Merge1",
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 2,
+      "position": [
+        3480,
+        -20
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "8894ce41-3f87-4739-8eef-464a8ea7a994",
+      "name": "Merge2",
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 2,
+      "position": [
+        3540,
+        640
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "81a2e174-3156-4b84-a4c2-d29640339fe5",
+      "name": "Spreadsheet File22",
+      "type": "n8n-nodes-base.spreadsheetFile",
+      "typeVersion": 1,
+      "position": [
+        3720,
+        620
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "7b8baceb-46fe-46ac-a887-74a5681b05b1",
+      "name": "Write Binary File1",
+      "type": "n8n-nodes-base.writeBinaryFile",
+      "typeVersion": 1,
+      "position": [
+        3900,
+        620
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "16869535-0c3e-4bf4-a0c4-0ecab1cfe868",
+      "name": "Merge3",
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 2,
+      "position": [
+        3540,
+        1320
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "3bead416-8ce5-46ed-bdcc-037ae373d644",
+      "name": "Spreadsheet File23",
+      "type": "n8n-nodes-base.spreadsheetFile",
+      "typeVersion": 1,
+      "position": [
+        3680,
+        1320
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "3b6ee82a-ddbb-48ca-8e97-568497948425",
+      "name": "Write Binary File2",
+      "type": "n8n-nodes-base.writeBinaryFile",
+      "typeVersion": 1,
+      "position": [
+        3840,
+        1320
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "90379cf9-9583-409b-8940-16aca993855f",
+      "name": "Merge4",
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 2,
+      "position": [
+        3580,
+        2020
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "671986b1-4511-49da-865a-07f384aa4c5d",
+      "name": "Spreadsheet File24",
+      "type": "n8n-nodes-base.spreadsheetFile",
+      "typeVersion": 1,
+      "position": [
+        3800,
+        2020
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "cbfd1bac-f2d3-4772-9181-0ab0921ec9a6",
+      "name": "Write Binary File3",
+      "type": "n8n-nodes-base.writeBinaryFile",
+      "typeVersion": 1,
+      "position": [
+        4020,
+        2020
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "67cf4d8c-54f6-4d72-a0c2-9f19265d855f",
+      "name": "Merge5",
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 2,
+      "position": [
+        3600,
+        2620
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "3ecb996f-fe5c-4c1c-b17b-aa61f32a89d5",
+      "name": "Spreadsheet File25",
+      "type": "n8n-nodes-base.spreadsheetFile",
+      "typeVersion": 1,
+      "position": [
+        3820,
+        2620
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "fd73d435-0464-4901-b0b4-0ca12da1543c",
+      "name": "Write Binary File4",
+      "type": "n8n-nodes-base.writeBinaryFile",
+      "typeVersion": 1,
+      "position": [
+        4040,
+        2620
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "64e454ce-b032-4136-ab11-6f6aa38ba0e1",
+      "name": "Merge6",
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 2,
+      "position": [
+        3600,
+        3100
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "8be8e50a-d288-424c-b118-f67acb89b0dc",
+      "name": "Spreadsheet File26",
+      "type": "n8n-nodes-base.spreadsheetFile",
+      "typeVersion": 1,
+      "position": [
+        3820,
+        3100
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "a87d5c35-0d32-42b0-9623-4fa5e16e2426",
+      "name": "Write Binary File5",
+      "type": "n8n-nodes-base.writeBinaryFile",
+      "typeVersion": 1,
+      "position": [
+        4040,
+        3100
+      ]
+    },
+    {
+      "parameters": {
+        "values": {
+          "string": [
+            {
+              "name": "id",
+              "value": "={{$json.id.toString() }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "b5322a03-4ebe-447a-915e-919e7ee4f1cc",
+      "name": "Set",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        1180,
+        420
+      ]
+    },
+    {
+      "parameters": {
+        "values": {
+          "string": [
+            {
+              "name": "id",
+              "value": "={{$json.id.toString() }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "a0203b0c-42cd-4b32-b0d1-6663516ac0e2",
+      "name": "Set1",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        1200,
+        800
+      ]
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "HTTP Request1": {
+      "main": [
+        [
+          {
+            "node": "Item Lists3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request2": {
+      "main": [
+        [
+          {
+            "node": "Item Lists2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request3": {
+      "main": [
+        [
+          {
+            "node": "Item Lists4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request4": {
+      "main": [
+        [
+          {
+            "node": "Item Lists5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request6": {
+      "main": [
+        [
+          {
+            "node": "Item Lists",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request7": {
+      "main": [
+        [
+          {
+            "node": "Item Lists6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge": {
+      "main": [
+        [
+          {
+            "node": "Spreadsheet File",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "HTTP Request16",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request8": {
+      "main": [
+        [
+          {
+            "node": "Item Lists7",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read Binary File": {
+      "main": [
+        [
+          {
+            "node": "Spreadsheet File7",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Spreadsheet File7": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request9",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read Binary File2": {
+      "main": [
+        [
+          {
+            "node": "Spreadsheet File8",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Spreadsheet File8": {
+      "main": [
+        [
+          {
+            "node": "Set4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set4": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request10",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read Binary File1": {
+      "main": [
+        [
+          {
+            "node": "Spreadsheet File9",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Spreadsheet File9": {
+      "main": [
+        [
+          {
+            "node": "Set5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set5": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request11",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read Binary File3": {
+      "main": [
+        [
+          {
+            "node": "Spreadsheet File10",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Spreadsheet File10": {
+      "main": [
+        [
+          {
+            "node": "Set6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set6": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request12",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read Binary File4": {
+      "main": [
+        [
+          {
+            "node": "Spreadsheet File11",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Spreadsheet File11": {
+      "main": [
+        [
+          {
+            "node": "Set7",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set7": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request13",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request13": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request14",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Item Lists": {
+      "main": [
+        [
+          {
+            "node": "Set",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request": {
+      "main": [
+        [
+          {
+            "node": "Item Lists1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Item Lists1": {
+      "main": [
+        [
+          {
+            "node": "Set1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Item Lists2": {
+      "main": [
+        [
+          {
+            "node": "Spreadsheet File2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Item Lists3": {
+      "main": [
+        [
+          {
+            "node": "Spreadsheet File1",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "HTTP Request5",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "HTTP Request15",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Item Lists4": {
+      "main": [
+        [
+          {
+            "node": "Spreadsheet File3",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "HTTP Request17",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Item Lists5": {
+      "main": [
+        [
+          {
+            "node": "Spreadsheet File4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Item Lists6": {
+      "main": [
+        [
+          {
+            "node": "Spreadsheet File6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Item Lists7": {
+      "main": [
+        [
+          {
+            "node": "Spreadsheet File5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request5": {
+      "main": [
+        [
+          {
+            "node": "Item Lists10",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Item Lists10": {
+      "main": [
+        [
+          {
+            "node": "Spreadsheet File14",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request16": {
+      "main": [
+        [
+          {
+            "node": "Spreadsheet File15",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request17": {
+      "main": [
+        [
+          {
+            "node": "Spreadsheet File16",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request18": {
+      "main": [
+        [
+          {
+            "node": "Item Lists8",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Item Lists8": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read Binary File5": {
+      "main": [
+        [
+          {
+            "node": "Spreadsheet File12",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Spreadsheet File12": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Merge1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read Binary File6": {
+      "main": [
+        [
+          {
+            "node": "Spreadsheet File13",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Item Lists9": {
+      "main": [
+        [
+          {
+            "node": "Code1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Spreadsheet File13": {
+      "main": [
+        [
+          {
+            "node": "Code1",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Merge2",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "HTTP Request19": {
+      "main": [
+        [
+          {
+            "node": "Item Lists9",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read Binary File7": {
+      "main": [
+        [
+          {
+            "node": "Spreadsheet File17",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Item Lists11": {
+      "main": [
+        [
+          {
+            "node": "Code2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Spreadsheet File17": {
+      "main": [
+        [
+          {
+            "node": "Code2",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Merge3",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Read Binary File8": {
+      "main": [
+        [
+          {
+            "node": "Spreadsheet File18",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Item Lists12": {
+      "main": [
+        [
+          {
+            "node": "Code3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Spreadsheet File18": {
+      "main": [
+        [
+          {
+            "node": "Code3",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Merge4",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "HTTP Request20": {
+      "main": [
+        [
+          {
+            "node": "Item Lists11",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request21": {
+      "main": [
+        [
+          {
+            "node": "Item Lists12",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read Binary File9": {
+      "main": [
+        [
+          {
+            "node": "Spreadsheet File19",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Item Lists13": {
+      "main": [
+        [
+          {
+            "node": "Code4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Spreadsheet File19": {
+      "main": [
+        [
+          {
+            "node": "Code4",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Merge5",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "HTTP Request22": {
+      "main": [
+        [
+          {
+            "node": "Item Lists13",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read Binary File10": {
+      "main": [
+        [
+          {
+            "node": "Spreadsheet File20",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Item Lists14": {
+      "main": [
+        [
+          {
+            "node": "Code5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Spreadsheet File20": {
+      "main": [
+        [
+          {
+            "node": "Code5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request24": {
+      "main": [
+        [
+          {
+            "node": "Item Lists14",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code": {
+      "main": [
+        [
+          {
+            "node": "Merge1",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Spreadsheet File21": {
+      "main": [
+        [
+          {
+            "node": "Write Binary File",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge1": {
+      "main": [
+        [
+          {
+            "node": "Spreadsheet File21",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code1": {
+      "main": [
+        [
+          {
+            "node": "Merge2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge2": {
+      "main": [
+        [
+          {
+            "node": "Spreadsheet File22",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Spreadsheet File22": {
+      "main": [
+        [
+          {
+            "node": "Write Binary File1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code2": {
+      "main": [
+        [
+          {
+            "node": "Merge3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge3": {
+      "main": [
+        [
+          {
+            "node": "Spreadsheet File23",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Spreadsheet File23": {
+      "main": [
+        [
+          {
+            "node": "Write Binary File2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code3": {
+      "main": [
+        [
+          {
+            "node": "Merge4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge4": {
+      "main": [
+        [
+          {
+            "node": "Spreadsheet File24",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Spreadsheet File24": {
+      "main": [
+        [
+          {
+            "node": "Write Binary File3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code4": {
+      "main": [
+        [
+          {
+            "node": "Merge5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge5": {
+      "main": [
+        [
+          {
+            "node": "Spreadsheet File25",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Spreadsheet File25": {
+      "main": [
+        [
+          {
+            "node": "Write Binary File4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code5": {
+      "main": [
+        [
+          {
+            "node": "Merge6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge6": {
+      "main": [
+        [
+          {
+            "node": "Spreadsheet File26",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Spreadsheet File26": {
+      "main": [
+        [
+          {
+            "node": "Write Binary File5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set1": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {},
+  "versionId": "95c733f9-5806-42cc-997c-ff09e456e53b",
+  "id": "7",
+  "meta": {
+    "instanceId": "d9bdeb4579b17df9c88028288d3ade19d6a1d4ba1ae0940a37683c4d10e85ca6"
+  },
+  "tags": []
+}

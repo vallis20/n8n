@@ -1,0 +1,208 @@
+{
+  "name": "WEBHOOK 4",
+  "nodes": [
+    {
+      "parameters": {
+        "authentication": "basicAuth",
+        "httpMethod": "POST",
+        "path": "ordercreation",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "42dc899e-8cc9-4774-9007-d4e6f595adc2",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [
+        280,
+        400
+      ],
+      "webhookId": "00f7522b-1580-4f5c-a03d-bc808c43bdac",
+      "credentials": {
+        "httpBasicAuth": {
+          "id": "10",
+          "name": "Unnamed credential"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "toFile",
+        "fileFormat": "csv",
+        "options": {
+          "fileName": "orders.csv"
+        }
+      },
+      "id": "2b9dc1d9-ea9b-4aea-a1a4-396ec0311f2a",
+      "name": "Spreadsheet File2",
+      "type": "n8n-nodes-base.spreadsheetFile",
+      "typeVersion": 1,
+      "position": [
+        860,
+        280
+      ]
+    },
+    {
+      "parameters": {
+        "fileName": "/Users/enavarrete/Documents/shopify/webhook.csv",
+        "options": {}
+      },
+      "id": "19c94eb1-d9ed-4453-bf71-fd50dd731ac4",
+      "name": "Write Binary File",
+      "type": "n8n-nodes-base.writeBinaryFile",
+      "typeVersion": 1,
+      "position": [
+        1080,
+        280
+      ]
+    },
+    {
+      "parameters": {
+        "keepOnlySet": true,
+        "values": {
+          "string": [
+            {
+              "name": "=heders",
+              "value": "={{ $json.headers[\"x-real-ip\"] }}"
+            },
+            {
+              "name": "body",
+              "value": "={{ $json.headers[\"x-forwarded-for\"] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "9540fa47-12e1-4177-b98a-97d9db80afcb",
+      "name": "Set",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        620,
+        280
+      ]
+    },
+    {
+      "parameters": {
+        "chatId": "6299230119",
+        "text": "order created and save",
+        "additionalFields": {}
+      },
+      "id": "a7c1967f-3cfb-4da3-b73f-785b9d182134",
+      "name": "Telegram",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1,
+      "position": [
+        700,
+        540
+      ],
+      "credentials": {
+        "telegramApi": {
+          "id": "9",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## BOT TELEGRAM\n@Prueba5000_bot\nmandar mensaje\n",
+        "height": 101.47073147374078
+      },
+      "id": "bb297f50-9c57-4361-a7af-d7cd76f66f2f",
+      "name": "Sticky Note",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        660,
+        720
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## WEBHOOK\nse configura en shopify->webhook->configurar el webhook\n",
+        "height": 118.57480354451098
+      },
+      "id": "cff132c0-6a89-425a-87c2-89e88df785e7",
+      "name": "Sticky Note1",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        240,
+        560
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## Guardar informacion \nSe guarda la informacion recibida en el webhook en un archivo csv local "
+      },
+      "id": "73d397f6-5dfc-4c40-9ed8-0e651839a275",
+      "name": "Sticky Note2",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1240,
+        300
+      ]
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Set",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Telegram",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Spreadsheet File2": {
+      "main": [
+        [
+          {
+            "node": "Write Binary File",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set": {
+      "main": [
+        [
+          {
+            "node": "Spreadsheet File2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Write Binary File": {
+      "main": [
+        [
+          {
+            "node": "Telegram",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {},
+  "versionId": "d59f986b-5833-4666-a363-d838a457229b",
+  "id": "22",
+  "meta": {
+    "instanceId": "d9bdeb4579b17df9c88028288d3ade19d6a1d4ba1ae0940a37683c4d10e85ca6"
+  },
+  "tags": []
+}

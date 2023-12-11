@@ -1,0 +1,231 @@
+{
+  "name": "PAGES, THEME 3",
+  "nodes": [
+    {
+      "parameters": {
+        "url": "https://88dc1b64a2edf718fd9d09d2785ad456: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@ullenboombaby.myshopify.com/admin/api/2023-04/themes.json?lim=150",
+        "options": {}
+      },
+      "id": "f6cf2641-4371-4773-be69-3878610894ec",
+      "name": "HTTP Request6",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        480,
+        160
+      ]
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "themes",
+        "options": {}
+      },
+      "id": "352f066f-14ea-4e9a-b589-f3799637d7f1",
+      "name": "Item Lists",
+      "type": "n8n-nodes-base.itemLists",
+      "typeVersion": 1,
+      "position": [
+        900,
+        160
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://88dc1b64a2edf718fd9d09d2785ad456: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@ullenboombaby.myshopify.com/admin/api/2023-04/pages.json",
+        "options": {}
+      },
+      "id": "89b2df14-9913-4000-81cb-f7ec4c920828",
+      "name": "HTTP Request",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        480,
+        420
+      ]
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "pages",
+        "options": {}
+      },
+      "id": "7f57f56e-bb03-4598-8588-cade01fec3cc",
+      "name": "Item Lists1",
+      "type": "n8n-nodes-base.itemLists",
+      "typeVersion": 1,
+      "position": [
+        900,
+        420
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {}
+          ]
+        }
+      },
+      "id": "55572b77-ca8c-43be-8f3d-2910e480be29",
+      "name": "Schedule Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1,
+      "position": [
+        1060,
+        700
+      ]
+    },
+    {
+      "parameters": {
+        "values": {
+          "string": [
+            {
+              "name": "id",
+              "value": "={{$json.id.toString() }} "
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "c3fc9fa1-9cad-477e-affd-77b875c3d857",
+      "name": "Set",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        1120,
+        160
+      ]
+    },
+    {
+      "parameters": {
+        "values": {
+          "string": [
+            {
+              "name": "id",
+              "value": "={{$json.id.toString() }}  "
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "ee827004-1560-4c90-8392-cec6d33ac805",
+      "name": "Set1",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        1120,
+        420
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "toFile",
+        "fileFormat": "csv",
+        "options": {
+          "fileName": "pages.csv"
+        }
+      },
+      "id": "fa924f5a-f41b-4817-8cdb-936878ea3405",
+      "name": "Spreadsheet File",
+      "type": "n8n-nodes-base.spreadsheetFile",
+      "typeVersion": 1,
+      "position": [
+        1340,
+        420
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "toFile",
+        "fileFormat": "csv",
+        "options": {
+          "fileName": "theme.csv"
+        }
+      },
+      "id": "a3c05236-9599-4082-aa56-e78cdb6d6821",
+      "name": "Spreadsheet File1",
+      "type": "n8n-nodes-base.spreadsheetFile",
+      "typeVersion": 1,
+      "position": [
+        1340,
+        160
+      ]
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "HTTP Request6": {
+      "main": [
+        [
+          {
+            "node": "Item Lists",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request": {
+      "main": [
+        [
+          {
+            "node": "Item Lists1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Item Lists": {
+      "main": [
+        [
+          {
+            "node": "Set",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Item Lists1": {
+      "main": [
+        [
+          {
+            "node": "Set1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set1": {
+      "main": [
+        [
+          {
+            "node": "Spreadsheet File",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set": {
+      "main": [
+        [
+          {
+            "node": "Spreadsheet File1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {},
+  "versionId": "e750826e-343c-45aa-aeec-25ccc97b6695",
+  "id": "13",
+  "meta": {
+    "instanceId": "d9bdeb4579b17df9c88028288d3ade19d6a1d4ba1ae0940a37683c4d10e85ca6"
+  },
+  "tags": []
+}
