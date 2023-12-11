@@ -1,0 +1,271 @@
+{
+  "name": "discounts_shopify 1",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "25e32ebb-bba4-4cbd-bb51-26a5826bcad7",
+      "name": "When clicking \"Execute Workflow\"",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        20,
+        1100
+      ]
+    },
+    {
+      "parameters": {
+        "filePath": "/Users/enavarrete/Documents/pruebashopify/prueba.csv"
+      },
+      "id": "b8f9687a-05c1-48c8-acea-5bab9853f211",
+      "name": "Read Binary File",
+      "type": "n8n-nodes-base.readBinaryFile",
+      "typeVersion": 1,
+      "position": [
+        240,
+        1100
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "320fd049-43a2-4bd2-8284-2f0945731d37",
+      "name": "Spreadsheet File",
+      "type": "n8n-nodes-base.spreadsheetFile",
+      "typeVersion": 1,
+      "position": [
+        460,
+        1100
+      ],
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {
+        "keepOnlySet": true,
+        "values": {
+          "string": [
+            {
+              "name": "title",
+              "value": "={{ $json.Code }}"
+            },
+            {
+              "name": "value",
+              "value": "-15"
+            },
+            {
+              "name": "target_selection",
+              "value": "all"
+            },
+            {
+              "name": "value_type",
+              "value": "percentage"
+            }
+          ],
+          "number": [
+            {
+              "name": "customer_selection",
+              "value": -15
+            },
+            {
+              "name": "starts_at",
+              "value": "={{ $json.Benutzdatum }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "51101f14-2e2c-4ea7-b9a2-75513fc6f0c7",
+      "name": "Set",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        700,
+        1100
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://b1ba016d6f3d08541490a71388849282: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@aventuramusica.myshopify.com/admin/api/2021-10/price_rules.json",
+        "sendBody": true,
+        "contentType": "raw",
+        "rawContentType": "application/json",
+        "body": "={\n    \"price_rule\": {\n\t\"title\": \"TestDisc001 extend title\",\n\t\"value_type\": \"percentage\",\n\t\"value\": \"-17.0\",\n\t\"customer_selection\": \"all\",\n\t\"target_type\": \"line_item\",\n\t\"target_selection\": \"all\",\n\t\"allocation_method\": \"across\",\n\t\"allocation_limit\": null,\n\t\"once_per_customer\": false,\n\t\"usage_limit\": null,\n    \"starts_at\": \"2023-04-03T00:00:00-05:00\",\n    \"ends_at\": \"2023-12-31T00:00:00-05:00\",\n\t\"prerequisite_subtotal_range\": null,\n\t\"prerequisite_quantity_range\": null,\n\t\"prerequisite_shipping_price_range\": null,\n\t\"prerequisite_to_entitlement_quantity_ratio\":\n\t\t{\n\t\t\"prerequisite_quantity\": null,\n\t\t\"entitled_quantity\": null\n\t\t},\n\t\"prerequisite_to_entitlement_purchase\":\n\t\t{\n\t\t\"prerequisite_amount\": null\n\t\t}\n    }\n}  ",
+        "options": {
+          "batching": {
+            "batch": {
+              "batchSize": 1
+            }
+          }
+        }
+      },
+      "id": "d103eb77-4ef0-48f0-944b-4c300a1822ee",
+      "name": "HTTP Request7",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        920,
+        1100
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://b1ba016d6f3d08541490a71388849282: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@aventuramusica.myshopify.com/admin/api/2021-10/price_rules/{{ $json.price_rule.id }}/discount_codes.json",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"discount_code\":{\"code\":\"MYCODE001\"}}",
+        "options": {}
+      },
+      "id": "e11468f6-92ae-40af-97f6-d506ba1ec45a",
+      "name": "HTTP Request8",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        1540,
+        1100
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## Ubicacion del archivo \nse coloca ubicacion del archivo cvs en el explorador de archivos",
+        "height": 164.4040192,
+        "width": 158.8080384
+      },
+      "id": "e86aaf5d-5e2f-474f-93ac-4a90d4636f9c",
+      "name": "Sticky Note",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        200,
+        1260
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## leer el archivo \nse leerá el archivo que en el nodo anterior se eligio, y se convierte la tabla en json.",
+        "height": 170.45954559999998,
+        "width": 181.09624320000006
+      },
+      "id": "dba20082-f8cb-4598-9d90-08d2ed720859",
+      "name": "Sticky Note1",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        420,
+        1260
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## Filtro\n Se elige que columnas se ocupan del archivo leido",
+        "height": 141.83342080000003,
+        "width": 150
+      },
+      "id": "90b68f0e-c5f9-40d1-aaae-d49a81b8c6fa",
+      "name": "Sticky Note2",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        680,
+        1260
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## se crean los descuentos\n**method**\nse hace una petición post. \n**URL**\nhttps://{apikey}:{token}@nombre_de_la_tienda.myshopify.com/admin/api/2021-10/price_rules.json\n**send body** \nse manda el la estructura del json, y se coloca el valor del json en los campos necesarios.",
+        "height": 226.5806847999997,
+        "width": 433.77684480000164
+      },
+      "id": "d85af880-8087-4967-bbd4-24924b703596",
+      "name": "Sticky Note3",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        860,
+        1260
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## Se agrega el código de descuento\n**Method** \nse hace una petición post \n**URL**\nhttps://{apikey}:{token}@nombre_de_tienda.myshopify.com/admin/aoi/2021-10/price_rules/{$json.price.rules.id}/discounts_codes.json\n**send body**\nse manda la estructura del json solo con el valoir del codigo.",
+        "height": 254.08000000000004,
+        "width": 467.1359999999998
+      },
+      "id": "59193372-c74c-4ace-99ce-9cf2f5774723",
+      "name": "Sticky Note4",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1320,
+        1260
+      ]
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When clicking \"Execute Workflow\"": {
+      "main": [
+        [
+          {
+            "node": "Read Binary File",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read Binary File": {
+      "main": [
+        [
+          {
+            "node": "Spreadsheet File",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Spreadsheet File": {
+      "main": [
+        [
+          {
+            "node": "Set",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request7",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request7": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request8",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {},
+  "versionId": "d9d289a8-124f-4635-b1b9-978b9c173f1d",
+  "id": "5",
+  "meta": {
+    "instanceId": "d9bdeb4579b17df9c88028288d3ade19d6a1d4ba1ae0940a37683c4d10e85ca6"
+  },
+  "tags": []
+}
