@@ -1,0 +1,1232 @@
+{
+  "name": "Backup",
+  "nodes": [
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "18f42c6d-8117-4100-9ea5-5014fe4608ca",
+      "name": "Write Binary File5",
+      "type": "n8n-nodes-base.writeBinaryFile",
+      "typeVersion": 1,
+      "position": [
+        1360,
+        4880
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "361a36c6-e0a0-472a-a8d3-f977040b6ae7",
+      "name": "Spreadsheet File26",
+      "type": "n8n-nodes-base.spreadsheetFile",
+      "typeVersion": 1,
+      "position": [
+        1140,
+        4880
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "68cad7e8-65ea-41ea-98f7-0169cbc47215",
+      "name": "Merge6",
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 2,
+      "position": [
+        920,
+        4880
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "af62761d-9fde-435e-ae22-fcac36fbc700",
+      "name": "Write Binary File4",
+      "type": "n8n-nodes-base.writeBinaryFile",
+      "typeVersion": 1,
+      "position": [
+        1360,
+        4400
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "7700b8c2-2bf4-4288-9bd5-cf19ef4ef45f",
+      "name": "Spreadsheet File25",
+      "type": "n8n-nodes-base.spreadsheetFile",
+      "typeVersion": 1,
+      "position": [
+        1140,
+        4400
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "78a69f33-cc35-46f0-932f-086946c3deaf",
+      "name": "Merge5",
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 2,
+      "position": [
+        920,
+        4400
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "2468a140-848d-4cfb-9874-dd6b126abd61",
+      "name": "Write Binary File3",
+      "type": "n8n-nodes-base.writeBinaryFile",
+      "typeVersion": 1,
+      "position": [
+        1340,
+        3800
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "00421ec9-19ff-42f0-b16c-5ec730898bcd",
+      "name": "Spreadsheet File24",
+      "type": "n8n-nodes-base.spreadsheetFile",
+      "typeVersion": 1,
+      "position": [
+        1120,
+        3800
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "06e88c40-b8b9-4be3-99f4-4347cfa71a7f",
+      "name": "Merge4",
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 2,
+      "position": [
+        900,
+        3800
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "04200abe-dd86-4ab5-8f68-fb86a1455e3c",
+      "name": "Write Binary File2",
+      "type": "n8n-nodes-base.writeBinaryFile",
+      "typeVersion": 1,
+      "position": [
+        1160,
+        3100
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "0afa7355-3448-4fa9-b69c-204f4d4ccb22",
+      "name": "Spreadsheet File23",
+      "type": "n8n-nodes-base.spreadsheetFile",
+      "typeVersion": 1,
+      "position": [
+        1000,
+        3100
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "4ddbc15e-0e60-467f-85f9-32ae61af0e5a",
+      "name": "Merge3",
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 2,
+      "position": [
+        860,
+        3100
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "65014bef-ec9a-46fc-ac35-26f9889283db",
+      "name": "Write Binary File1",
+      "type": "n8n-nodes-base.writeBinaryFile",
+      "typeVersion": 1,
+      "position": [
+        1220,
+        2400
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "9fd4e969-7352-4c78-895c-1a7b6988be80",
+      "name": "Spreadsheet File22",
+      "type": "n8n-nodes-base.spreadsheetFile",
+      "typeVersion": 1,
+      "position": [
+        1040,
+        2400
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "c78dfd89-8ea8-4bfc-8fdf-2a43f0e3ed45",
+      "name": "Merge2",
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 2,
+      "position": [
+        860,
+        2420
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "8b17a7b6-bcab-4095-b145-f8642aba3613",
+      "name": "Merge1",
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 2,
+      "position": [
+        800,
+        1760
+      ]
+    },
+    {
+      "parameters": {
+        "fileName": "/Users/enavarrete/Documents/pruebashopify/orders.csv",
+        "options": {
+          "append": "={{ true }}"
+        }
+      },
+      "id": "2cab9524-1202-4ad8-ab0e-a662700cdd30",
+      "name": "Write Binary File",
+      "type": "n8n-nodes-base.writeBinaryFile",
+      "typeVersion": 1,
+      "position": [
+        1200,
+        1740
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "toFile",
+        "fileFormat": "csv",
+        "options": {
+          "fileName": "orders.csv"
+        }
+      },
+      "id": "28088d6e-a64a-4c11-b3ae-c22065ca40d5",
+      "name": "Spreadsheet File21",
+      "type": "n8n-nodes-base.spreadsheetFile",
+      "typeVersion": 1,
+      "position": [
+        1000,
+        1720
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## Backup\n",
+        "height": 80
+      },
+      "id": "357fd561-cbac-4f5c-bcf1-ed86958259bd",
+      "name": "Sticky Note28",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        100,
+        1440
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://b1ba016d6f3d08541490a71388849282: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@aventuramusica.myshopify.com/admin/api/2021-10/reports.json?since_id=10",
+        "options": {}
+      },
+      "id": "b07f8088-2d83-4e43-b13c-22a1404cd820",
+      "name": "HTTP Request24",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        80,
+        4760
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## Reports\nsolo falta agregar el que se actualice el archivo",
+        "height": 106.32601599999995
+      },
+      "id": "533cb070-2d5a-45a6-b82f-3dd232866a91",
+      "name": "Sticky Note26",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        120,
+        5140
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Obtener los datos del item list y del spreadsheet\nconst itemsData = items[0].json;\nconst sheetData = items[1].json;\n\n// Obtener los valores de la propiedad \"name\"\nconst itemName = itemsData.order_number;\nconst sheetName = sheetData['order_number'];\n\n// Comparar los valores de la propiedad \"name\"\nif (itemName === sheetName) {\n  // Si los nombres son iguales, no hacer nada\n  return [];\n   \n\n} else {\n  // Si los nombres son diferentes, devolver el objeto JSON del item list\n   return [{ json: itemsData }];\n}"
+      },
+      "id": "f63306c5-f412-43b8-bf28-7b65a9c510ed",
+      "name": "Code5",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        700,
+        4880
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "bac20ff7-58aa-4b78-9848-a37a04f61c51",
+      "name": "Spreadsheet File20",
+      "type": "n8n-nodes-base.spreadsheetFile",
+      "typeVersion": 1,
+      "position": [
+        360,
+        4960
+      ]
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "orders",
+        "options": {}
+      },
+      "id": "00720cca-f025-4168-812b-87f05b2a19a6",
+      "name": "Item Lists14",
+      "type": "n8n-nodes-base.itemLists",
+      "typeVersion": 1,
+      "position": [
+        360,
+        4760
+      ]
+    },
+    {
+      "parameters": {
+        "filePath": "/Users/enavarrete/Documents/pruebashopify/orders.csv"
+      },
+      "id": "7504cd07-f9b9-463f-bbb6-c24ecf1e1348",
+      "name": "Read Binary File10",
+      "type": "n8n-nodes-base.readBinaryFile",
+      "typeVersion": 1,
+      "position": [
+        140,
+        4960
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://b1ba016d6f3d08541490a71388849282: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@aventuramusica.myshopify.com/admin/api/2021-10/marketing_events.json",
+        "options": {}
+      },
+      "id": "62bcda0f-b28a-45d1-bda3-9e95fcfbbaac",
+      "name": "HTTP Request22",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        140,
+        4180
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## Marketing\nsolo falta agregar el que se actualice el archivo",
+        "height": 106.32601599999995
+      },
+      "id": "21047d9f-c2a2-4acc-9e52-b82fe70c89e5",
+      "name": "Sticky Note25",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        120,
+        4560
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Obtener los datos del item list y del spreadsheet\nconst itemsData = items[0].json;\nconst sheetData = items[1].json;\n\n// Obtener los valores de la propiedad \"name\"\nconst itemName = itemsData.order_number;\nconst sheetName = sheetData['order_number'];\n\n// Comparar los valores de la propiedad \"name\"\nif (itemName === sheetName) {\n  // Si los nombres son iguales, no hacer nada\n  return [];\n   \n\n} else {\n  // Si los nombres son diferentes, devolver el objeto JSON del item list\n   return [{ json: itemsData }];\n}"
+      },
+      "id": "f6663794-43d6-4a03-ab97-c28c6d8ffe2f",
+      "name": "Code4",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        700,
+        4300
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "9042e199-cb0d-40d7-85f3-e30c9bb0c3eb",
+      "name": "Spreadsheet File19",
+      "type": "n8n-nodes-base.spreadsheetFile",
+      "typeVersion": 1,
+      "position": [
+        360,
+        4380
+      ]
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "orders",
+        "options": {}
+      },
+      "id": "3d4923a5-37cc-47ad-8148-8124f273a1d9",
+      "name": "Item Lists13",
+      "type": "n8n-nodes-base.itemLists",
+      "typeVersion": 1,
+      "position": [
+        360,
+        4180
+      ]
+    },
+    {
+      "parameters": {
+        "filePath": "/Users/enavarrete/Documents/pruebashopify/orders.csv"
+      },
+      "id": "43c261a9-438a-4d9b-b5c4-ec36832783e7",
+      "name": "Read Binary File9",
+      "type": "n8n-nodes-base.readBinaryFile",
+      "typeVersion": 1,
+      "position": [
+        140,
+        4380
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://b1ba016d6f3d08541490a71388849282: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@aventuramusica.myshopify.com/admin/api/2021-10/price_rules.json",
+        "options": {}
+      },
+      "id": "ffb4370c-ab3f-43d8-a2cf-92002c536b82",
+      "name": "HTTP Request21",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        120,
+        3580
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://b1ba016d6f3d08541490a71388849282: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@aventuramusica.myshopify.com/admin/api/2021-10/customers.json",
+        "options": {}
+      },
+      "id": "5d2a1dc1-aff0-4619-b981-e42e3c0c22ed",
+      "name": "HTTP Request20",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        120,
+        2900
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## Discounts\nsolo falta agregar el que se actualice el archivo",
+        "height": 106.32601599999995
+      },
+      "id": "3234b72c-ecdc-4a7c-a37a-5d3af05ce7a2",
+      "name": "Sticky Note24",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        100,
+        3960
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Obtener los datos del item list y del spreadsheet\nconst itemsData = items[0].json;\nconst sheetData = items[1].json;\n\n// Obtener los valores de la propiedad \"name\"\nconst itemName = itemsData.order_number;\nconst sheetName = sheetData['order_number'];\n\n// Comparar los valores de la propiedad \"name\"\nif (itemName === sheetName) {\n  // Si los nombres son iguales, no hacer nada\n  return [];\n   \n\n} else {\n  // Si los nombres son diferentes, devolver el objeto JSON del item list\n   return [{ json: itemsData }];\n}"
+      },
+      "id": "2a8ab753-4d72-4719-b7a0-c8a9db164643",
+      "name": "Code3",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        680,
+        3700
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "6b1a20be-0534-4829-855e-a5959ac0ebeb",
+      "name": "Spreadsheet File18",
+      "type": "n8n-nodes-base.spreadsheetFile",
+      "typeVersion": 1,
+      "position": [
+        340,
+        3780
+      ]
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "orders",
+        "options": {}
+      },
+      "id": "f7a238dc-ab21-411c-ba94-40ea343228d2",
+      "name": "Item Lists12",
+      "type": "n8n-nodes-base.itemLists",
+      "typeVersion": 1,
+      "position": [
+        340,
+        3580
+      ]
+    },
+    {
+      "parameters": {
+        "filePath": "/Users/enavarrete/Documents/pruebashopify/orders.csv"
+      },
+      "id": "8a125148-6ecb-4fd7-b09a-3b97350f8e3a",
+      "name": "Read Binary File8",
+      "type": "n8n-nodes-base.readBinaryFile",
+      "typeVersion": 1,
+      "position": [
+        120,
+        3780
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## Customers\nsolo falta agregar el que se actualice el archivo",
+        "height": 106.32601599999995
+      },
+      "id": "145d0e95-e4d0-418d-9423-759970d75159",
+      "name": "Sticky Note23",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        100,
+        3280
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Obtener los datos del item list y del spreadsheet\nconst itemsData = items[0].json;\nconst sheetData = items[1].json;\n\n// Obtener los valores de la propiedad \"name\"\nconst itemName = itemsData.order_number;\nconst sheetName = sheetData['order_number'];\n\n// Comparar los valores de la propiedad \"name\"\nif (itemName === sheetName) {\n  // Si los nombres son iguales, no hacer nada\n  return [];\n   \n\n} else {\n  // Si los nombres son diferentes, devolver el objeto JSON del item list\n   return [{ json: itemsData }];\n}"
+      },
+      "id": "337db005-b5ba-4719-bb1c-29191499c4b3",
+      "name": "Code2",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        680,
+        3020
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "0b0e1269-e3b4-4af0-a31f-d904c4adaba2",
+      "name": "Spreadsheet File17",
+      "type": "n8n-nodes-base.spreadsheetFile",
+      "typeVersion": 1,
+      "position": [
+        340,
+        3100
+      ]
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "orders",
+        "options": {}
+      },
+      "id": "00a9a8f1-4814-46b2-9223-f3a75f9d9889",
+      "name": "Item Lists11",
+      "type": "n8n-nodes-base.itemLists",
+      "typeVersion": 1,
+      "position": [
+        340,
+        2900
+      ]
+    },
+    {
+      "parameters": {
+        "filePath": "/Users/enavarrete/Documents/pruebashopify/orders.csv"
+      },
+      "id": "dfdbd838-8c42-486b-897f-37f9711b37f1",
+      "name": "Read Binary File7",
+      "type": "n8n-nodes-base.readBinaryFile",
+      "typeVersion": 1,
+      "position": [
+        120,
+        3100
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://b1ba016d6f3d08541490a71388849282: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@aventuramusica.myshopify.com/admin/api/2021-10/products.json",
+        "options": {}
+      },
+      "id": "14b19e51-b7e7-4548-b810-081fecf3bdab",
+      "name": "HTTP Request19",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        100,
+        2220
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## Products \nsolo falta agregar el que se actualice el archivo",
+        "height": 106.32601599999995
+      },
+      "id": "787ebbe7-49f6-4587-874f-db29191e9d2f",
+      "name": "Sticky Note22",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        80,
+        2600
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Obtener los datos del item list y del spreadsheet\nconst itemsData = items[0].json;\nconst sheetData = items[1].json;\n\n// Obtener los valores de la propiedad \"name\"\nconst itemName = itemsData.order_number;\nconst sheetName = sheetData['order_number'];\n\n// Comparar los valores de la propiedad \"name\"\nif (itemName === sheetName) {\n  // Si los nombres son iguales, no hacer nada\n  return [];\n   \n\n} else {\n  // Si los nombres son diferentes, devolver el objeto JSON del item list\n   return [{ json: itemsData }];\n}"
+      },
+      "id": "153d02b7-a4ab-49ad-9901-a47c10c12e19",
+      "name": "Code1",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        660,
+        2340
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "f08f3f3b-54f6-462e-b822-2adfb68f643b",
+      "name": "Spreadsheet File13",
+      "type": "n8n-nodes-base.spreadsheetFile",
+      "typeVersion": 1,
+      "position": [
+        320,
+        2420
+      ]
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "orders",
+        "options": {}
+      },
+      "id": "dbcb804a-c67d-4fc1-b156-69c5772da63c",
+      "name": "Item Lists9",
+      "type": "n8n-nodes-base.itemLists",
+      "typeVersion": 1,
+      "position": [
+        320,
+        2220
+      ]
+    },
+    {
+      "parameters": {
+        "filePath": "/Users/enavarrete/Documents/pruebashopify/orders.csv"
+      },
+      "id": "d707a06b-e72c-450c-932e-96685c80b0e3",
+      "name": "Read Binary File6",
+      "type": "n8n-nodes-base.readBinaryFile",
+      "typeVersion": 1,
+      "position": [
+        100,
+        2420
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## Orders\nsolo falta agregar el que se actualice el archivo",
+        "height": 106.32601599999995
+      },
+      "id": "03ef3aea-5a9b-4d32-bf04-a7ef4a1ec044",
+      "name": "Sticky Note21",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        80,
+        2000
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Obtener los datos del item list y del spreadsheet\nconst itemsData = items[0].json;\nconst sheetData = items[1].json;\n\n// Obtener los valores de la propiedad \"name\"\nconst itemName = itemsData.order_number;\nconst sheetName = sheetData['order_number'];\n// Obtener los valores de la propiedad \"name\"\nconst itemName1 = itemName.toString();\nconst sheetName1 = sheetName.toString();\n\n// Comparar los valores de la propiedad \"name\"\nif (itemName1 === sheetName1) {\n  // Si los nombres son iguales, no hacer nada\n  return [];\n} else {\n  // Si los nombres son diferentes, devolver el objeto JSON del item list\n  const itemValues = Object.values(itemsData);\n  return [{ json: itemsData }];\n}"
+      },
+      "id": "57737117-9c64-4036-89d3-6a75dc4660e2",
+      "name": "Code",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        520,
+        1700
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "a43ca2a0-41e1-48c7-9098-5f4a1f03ee85",
+      "name": "Spreadsheet File12",
+      "type": "n8n-nodes-base.spreadsheetFile",
+      "typeVersion": 1,
+      "position": [
+        260,
+        1820
+      ]
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "orders",
+        "options": {}
+      },
+      "id": "079fdfba-ed8c-453a-b011-7525a4f86d59",
+      "name": "Item Lists8",
+      "type": "n8n-nodes-base.itemLists",
+      "typeVersion": 1,
+      "position": [
+        200,
+        1620
+      ]
+    },
+    {
+      "parameters": {
+        "filePath": "/Users/enavarrete/Documents/pruebashopify/orders.csv"
+      },
+      "id": "622a892c-ca6b-46d5-83dc-d49e44a5c10c",
+      "name": "Read Binary File5",
+      "type": "n8n-nodes-base.readBinaryFile",
+      "typeVersion": 1,
+      "position": [
+        100,
+        1820
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://b1ba016d6f3d08541490a71388849282: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@aventuramusica.myshopify.com/admin/api/2021-10/orders.json?status=any",
+        "options": {}
+      },
+      "id": "da97f6bf-3511-4874-912b-626c23524747",
+      "name": "HTTP Request18",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        -20,
+        1620
+      ]
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Spreadsheet File26": {
+      "main": [
+        [
+          {
+            "node": "Write Binary File5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge6": {
+      "main": [
+        [
+          {
+            "node": "Spreadsheet File26",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Spreadsheet File25": {
+      "main": [
+        [
+          {
+            "node": "Write Binary File4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge5": {
+      "main": [
+        [
+          {
+            "node": "Spreadsheet File25",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Spreadsheet File24": {
+      "main": [
+        [
+          {
+            "node": "Write Binary File3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge4": {
+      "main": [
+        [
+          {
+            "node": "Spreadsheet File24",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Spreadsheet File23": {
+      "main": [
+        [
+          {
+            "node": "Write Binary File2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge3": {
+      "main": [
+        [
+          {
+            "node": "Spreadsheet File23",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Spreadsheet File22": {
+      "main": [
+        [
+          {
+            "node": "Write Binary File1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge2": {
+      "main": [
+        [
+          {
+            "node": "Spreadsheet File22",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Spreadsheet File21": {
+      "main": [
+        [
+          {
+            "node": "Write Binary File",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge1": {
+      "main": [
+        [
+          {
+            "node": "Spreadsheet File21",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code5": {
+      "main": [
+        [
+          {
+            "node": "Merge6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Spreadsheet File20": {
+      "main": [
+        [
+          {
+            "node": "Code5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Item Lists14": {
+      "main": [
+        [
+          {
+            "node": "Code5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request24": {
+      "main": [
+        [
+          {
+            "node": "Item Lists14",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read Binary File10": {
+      "main": [
+        [
+          {
+            "node": "Spreadsheet File20",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code4": {
+      "main": [
+        [
+          {
+            "node": "Merge5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Spreadsheet File19": {
+      "main": [
+        [
+          {
+            "node": "Merge5",
+            "type": "main",
+            "index": 1
+          },
+          {
+            "node": "Code4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Item Lists13": {
+      "main": [
+        [
+          {
+            "node": "Code4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request22": {
+      "main": [
+        [
+          {
+            "node": "Item Lists13",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read Binary File9": {
+      "main": [
+        [
+          {
+            "node": "Spreadsheet File19",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code3": {
+      "main": [
+        [
+          {
+            "node": "Merge4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Spreadsheet File18": {
+      "main": [
+        [
+          {
+            "node": "Merge4",
+            "type": "main",
+            "index": 1
+          },
+          {
+            "node": "Code3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Item Lists12": {
+      "main": [
+        [
+          {
+            "node": "Code3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request21": {
+      "main": [
+        [
+          {
+            "node": "Item Lists12",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read Binary File8": {
+      "main": [
+        [
+          {
+            "node": "Spreadsheet File18",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code2": {
+      "main": [
+        [
+          {
+            "node": "Merge3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Spreadsheet File17": {
+      "main": [
+        [
+          {
+            "node": "Merge3",
+            "type": "main",
+            "index": 1
+          },
+          {
+            "node": "Code2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Item Lists11": {
+      "main": [
+        [
+          {
+            "node": "Code2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request20": {
+      "main": [
+        [
+          {
+            "node": "Item Lists11",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read Binary File7": {
+      "main": [
+        [
+          {
+            "node": "Spreadsheet File17",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code1": {
+      "main": [
+        [
+          {
+            "node": "Merge2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Spreadsheet File13": {
+      "main": [
+        [
+          {
+            "node": "Merge2",
+            "type": "main",
+            "index": 1
+          },
+          {
+            "node": "Code1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Item Lists9": {
+      "main": [
+        [
+          {
+            "node": "Code1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request19": {
+      "main": [
+        [
+          {
+            "node": "Item Lists9",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read Binary File6": {
+      "main": [
+        [
+          {
+            "node": "Spreadsheet File13",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code": {
+      "main": [
+        [
+          {
+            "node": "Merge1",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Spreadsheet File12": {
+      "main": [
+        [
+          {
+            "node": "Merge1",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Item Lists8": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read Binary File5": {
+      "main": [
+        [
+          {
+            "node": "Spreadsheet File12",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request18": {
+      "main": [
+        [
+          {
+            "node": "Item Lists8",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {},
+  "versionId": "661b3ec5-6439-4005-830a-3cc797564617",
+  "id": "6",
+  "meta": {
+    "instanceId": "9eab64f66f430d2752e841d511cc7c2d87397ff6ea605c83e83ae63a5650b543"
+  },
+  "tags": []
+}
