@@ -1,0 +1,1213 @@
+{
+  "name": "Export",
+  "nodes": [
+    {
+      "parameters": {
+        "url": "https://88dc1b64a2edf718fd9d09d2785ad456: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@ullenboombaby.myshopify.com/admin/api/2021-10/smart_collections.json?limit=150",
+        "options": {}
+      },
+      "id": "85e2b186-c245-4f39-b8fe-92e0b4f9346e",
+      "name": "HTTP Request",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        280,
+        1420
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://88dc1b64a2edf718fd9d09d2785ad456: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@ullenboombaby.myshopify.com/admin/api/2021-10/products.json",
+        "options": {}
+      },
+      "id": "f70bc43d-a45b-400c-9f40-0a9e3121798f",
+      "name": "HTTP Request1",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        260,
+        780
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## Smart collections\n obtener collecciones de productos automaticos",
+        "height": 90.32192000000003,
+        "width": 347.3479679999998
+      },
+      "id": "4d24bcaf-fa1d-456d-9431-90142f5c2d9b",
+      "name": "Sticky Note",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        260,
+        1580
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## Products",
+        "height": 80
+      },
+      "id": "62ba7987-ed9a-48fb-8bc0-66209bd86d61",
+      "name": "Sticky Note1",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        220,
+        940
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "toFile",
+        "fileFormat": "csv",
+        "options": {}
+      },
+      "id": "e30d5dd6-42c6-4b95-b0d7-43187510b381",
+      "name": "Spreadsheet File1",
+      "type": "n8n-nodes-base.spreadsheetFile",
+      "typeVersion": 1,
+      "position": [
+        760,
+        860
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://b1ba016d6f3d08541490a71388849282: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@aventuramusica.myshopify.com/admin/api/2021-10/orders.json?status=any",
+        "options": {}
+      },
+      "id": "c4d9fb2d-15e3-4abd-8d5a-c3815de6f6de",
+      "name": "HTTP Request2",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        260,
+        460
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## Orders",
+        "height": 80
+      },
+      "id": "5d771043-e644-4fb9-aa3d-c50fc5f540fc",
+      "name": "Sticky Note2",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        200,
+        640
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "toFile",
+        "fileFormat": "csv",
+        "options": {
+          "fileName": "orders.csv"
+        }
+      },
+      "id": "ef9fc0c3-8ff3-4adf-8221-db25996ac7f2",
+      "name": "Spreadsheet File2",
+      "type": "n8n-nodes-base.spreadsheetFile",
+      "typeVersion": 1,
+      "position": [
+        700,
+        460
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://b1ba016d6f3d08541490a71388849282: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@aventuramusica.myshopify.com/admin/api/2021-10/customers.json",
+        "options": {}
+      },
+      "id": "03039e77-4142-407b-9b94-e080620b0fcc",
+      "name": "HTTP Request3",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        280,
+        1720
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## Custumers",
+        "height": 80
+      },
+      "id": "1e14fa45-9cc5-4fa8-b74e-0ab95de740e4",
+      "name": "Sticky Note3",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        320,
+        1920
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "toFile",
+        "fileFormat": "csv",
+        "options": {}
+      },
+      "id": "c03fc3b5-ed8e-4560-b785-cae7e5780e96",
+      "name": "Spreadsheet File3",
+      "type": "n8n-nodes-base.spreadsheetFile",
+      "typeVersion": 1,
+      "position": [
+        740,
+        1880
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://b1ba016d6f3d08541490a71388849282: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@aventuramusica.myshopify.com/admin/api/2021-10/price_rules.json",
+        "options": {}
+      },
+      "id": "f4dbc050-8706-4f30-93fa-84cafe68e8b4",
+      "name": "HTTP Request4",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        260,
+        2100
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## Discounts \nsolo es el titulo del descuento.\nNo tiene metafield",
+        "height": 98.57945600000005
+      },
+      "id": "f45bae2c-ba01-49e2-ad5e-4cca5d8a0ba3",
+      "name": "Sticky Note4",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        240,
+        2320
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "toFile",
+        "fileFormat": "csv",
+        "options": {}
+      },
+      "id": "27ca5b5f-c096-4397-94a8-3793fc9e82af",
+      "name": "Spreadsheet File4",
+      "type": "n8n-nodes-base.spreadsheetFile",
+      "typeVersion": 1,
+      "position": [
+        720,
+        2100
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://88dc1b64a2edf718fd9d09d2785ad456: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@ullenboombaby.myshopify.com/admin/api/2021-10/custom_collections.json?limit=150",
+        "options": {}
+      },
+      "id": "1426a4cd-078c-4863-a7ff-c6f55379f9e3",
+      "name": "HTTP Request6",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        280,
+        1040
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## Custom collections\nson colecciones que se ingresan manualmente",
+        "height": 132.83479396026485
+      },
+      "id": "667743d3-71fe-4b37-b1ed-43d4ebf754ea",
+      "name": "Sticky Note5",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        220,
+        1200
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://b1ba016d6f3d08541490a71388849282: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@aventuramusica.myshopify.com/admin/api/2021-10/marketing_events.json",
+        "options": {}
+      },
+      "id": "76c6ca4e-e2d2-4a9f-8c4e-7fb64f4cb901",
+      "name": "HTTP Request7",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        280,
+        2460
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "8ce19843-db2b-4179-b303-ee0430a80bcb",
+      "name": "Spreadsheet File6",
+      "type": "n8n-nodes-base.spreadsheetFile",
+      "typeVersion": 1,
+      "position": [
+        800,
+        2460
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## Marketing",
+        "height": 80
+      },
+      "id": "9192f1f1-fbbf-4ce9-ab93-fdad939a58ed",
+      "name": "Sticky Note6",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        260,
+        2620
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "a031f97c-1fd6-4b2f-96e0-ecd2111b28f8",
+      "name": "Merge",
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 2,
+      "position": [
+        1220,
+        1220
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "toFile",
+        "fileFormat": "csv",
+        "options": {
+          "fileName": "collections.csv"
+        }
+      },
+      "id": "b588e41a-82f9-4653-8019-e462afb43dc0",
+      "name": "Spreadsheet File",
+      "type": "n8n-nodes-base.spreadsheetFile",
+      "typeVersion": 1,
+      "position": [
+        1520,
+        1220
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://b1ba016d6f3d08541490a71388849282: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@aventuramusica.myshopify.com/admin/api/2021-10/reports.json?since_id=10",
+        "options": {}
+      },
+      "id": "907aceaa-9697-47a6-b516-d2a420c157d3",
+      "name": "HTTP Request8",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        280,
+        2960
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## reports",
+        "height": 80
+      },
+      "id": "7993cd71-4fb5-49e5-97ac-a563630d632f",
+      "name": "Sticky Note7",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        240,
+        3140
+      ]
+    },
+    {
+      "parameters": {
+        "content": "faltaria agragar content",
+        "height": 95.17350993377478
+      },
+      "id": "3d1cfa0e-4d27-418a-b11b-e05f6acc24d0",
+      "name": "Sticky Note8",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        260,
+        2800
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## EXPORT",
+        "height": 80
+      },
+      "id": "26a13a93-bbef-4e72-9529-819a783ea9f5",
+      "name": "Sticky Note9",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        300,
+        260
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "toFile",
+        "fileFormat": "csv",
+        "options": {}
+      },
+      "id": "5e0cfca0-1269-4436-91ed-204b4adbe19c",
+      "name": "Spreadsheet File5",
+      "type": "n8n-nodes-base.spreadsheetFile",
+      "typeVersion": 1,
+      "position": [
+        720,
+        2960
+      ]
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "custom_collections",
+        "options": {}
+      },
+      "id": "4ccd93e8-34fd-4483-91f3-cbb327e73b51",
+      "name": "Item Lists",
+      "type": "n8n-nodes-base.itemLists",
+      "typeVersion": 1,
+      "position": [
+        580,
+        1040
+      ]
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "smart_collections",
+        "options": {}
+      },
+      "id": "4403c6d6-e5c0-4b5a-bc97-3b69cebdb221",
+      "name": "Item Lists1",
+      "type": "n8n-nodes-base.itemLists",
+      "typeVersion": 1,
+      "position": [
+        600,
+        1420
+      ]
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "orders",
+        "options": {}
+      },
+      "id": "aaa4c5b0-9043-4f2a-b4bf-92a50bea9a24",
+      "name": "Item Lists2",
+      "type": "n8n-nodes-base.itemLists",
+      "typeVersion": 1,
+      "position": [
+        480,
+        440
+      ]
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "products",
+        "options": {}
+      },
+      "id": "d9330bc3-694c-44ea-8b2b-a24c62e81f03",
+      "name": "Item Lists3",
+      "type": "n8n-nodes-base.itemLists",
+      "typeVersion": 1,
+      "position": [
+        520,
+        780
+      ]
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "customers",
+        "options": {}
+      },
+      "id": "02988bf8-09aa-438d-91cc-5d2b39e927ce",
+      "name": "Item Lists4",
+      "type": "n8n-nodes-base.itemLists",
+      "typeVersion": 1,
+      "position": [
+        500,
+        1720
+      ]
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "price_rules",
+        "options": {}
+      },
+      "id": "372af2b3-7656-437e-bb23-f13cbe1e8bd1",
+      "name": "Item Lists5",
+      "type": "n8n-nodes-base.itemLists",
+      "typeVersion": 1,
+      "position": [
+        480,
+        2100
+      ]
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "marketing_events",
+        "options": {}
+      },
+      "id": "ab920b7e-b2e6-4625-b61d-b30747e986ff",
+      "name": "Item Lists6",
+      "type": "n8n-nodes-base.itemLists",
+      "typeVersion": 1,
+      "position": [
+        500,
+        2460
+      ]
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "reports",
+        "options": {}
+      },
+      "id": "521accce-fd7c-4d12-9262-720250f11835",
+      "name": "Item Lists7",
+      "type": "n8n-nodes-base.itemLists",
+      "typeVersion": 1,
+      "position": [
+        500,
+        2960
+      ]
+    },
+    {
+      "parameters": {
+        "url": "=https://b1ba016d6f3d08541490a71388849282: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@aventuramusica.myshopify.com/admin/api/2021-10/products/{{ $json.id }}/metafields.json ",
+        "options": {}
+      },
+      "id": "f3041643-8620-4487-a99b-a55850e2ac69",
+      "name": "HTTP Request5",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        760,
+        660
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## Metafield of products",
+        "height": 96.51507200000003
+      },
+      "id": "36d6d5a1-a5ec-49c2-bbf6-045b3c749852",
+      "name": "Sticky Note13",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        900,
+        620
+      ]
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "metafields",
+        "options": {}
+      },
+      "id": "8590bef1-8e73-4794-9d6d-fcb937029e4f",
+      "name": "Item Lists10",
+      "type": "n8n-nodes-base.itemLists",
+      "typeVersion": 1,
+      "position": [
+        1180,
+        660
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "toFile",
+        "fileFormat": "csv",
+        "options": {}
+      },
+      "id": "7eebae57-71f0-45b2-9c9c-ed40fe9214c0",
+      "name": "Spreadsheet File14",
+      "type": "n8n-nodes-base.spreadsheetFile",
+      "typeVersion": 1,
+      "position": [
+        1440,
+        660
+      ]
+    },
+    {
+      "parameters": {
+        "url": "=https://88dc1b64a2edf718fd9d09d2785ad456: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@ullenboombaby.myshopify.com/admin/api/2021-10/collections/{{ $json.id }}/metafields.json",
+        "options": {}
+      },
+      "id": "45db9bb6-4873-4b89-9742-63fb4b0a16ba",
+      "name": "HTTP Request16",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        1520,
+        1040
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## Metafield of collections",
+        "height": 96.51507200000003
+      },
+      "id": "f22fdcb6-18f5-454d-ac63-723d2a52d4c1",
+      "name": "Sticky Note14",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1440,
+        980
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "toFile",
+        "fileFormat": "csv",
+        "options": {}
+      },
+      "id": "a87c32b3-bc31-419e-94d9-6df415d5e10d",
+      "name": "Spreadsheet File15",
+      "type": "n8n-nodes-base.spreadsheetFile",
+      "typeVersion": 1,
+      "position": [
+        1940,
+        1040
+      ]
+    },
+    {
+      "parameters": {
+        "url": "=https://b1ba016d6f3d08541490a71388849282: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@aventuramusica.myshopify.com/admin/api/2021-10/customers/{{ $json.id }}/metafields.json ",
+        "options": {}
+      },
+      "id": "18303573-86c5-42fb-bed7-01119c95ede9",
+      "name": "HTTP Request17",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        740,
+        1660
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "toFile",
+        "fileFormat": "csv",
+        "options": {}
+      },
+      "id": "0373f7e1-adce-4b56-bfce-5410b46eacc3",
+      "name": "Spreadsheet File16",
+      "type": "n8n-nodes-base.spreadsheetFile",
+      "typeVersion": 1,
+      "position": [
+        1140,
+        1660
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## Metafield of customers",
+        "height": 96.51507200000003
+      },
+      "id": "8c674a9c-603c-4868-a9bc-9312e58db8a2",
+      "name": "Sticky Note18",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        860,
+        1600
+      ]
+    },
+    {
+      "parameters": {
+        "url": "=https://b1ba016d6f3d08541490a71388849282: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@aventuramusica.myshopify.com/admin/api/2021-10/products/{{ $json.id }}/images.json ",
+        "options": {}
+      },
+      "id": "c9665a8d-b363-494d-96b4-86657dd998c6",
+      "name": "HTTP Request15",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        1120,
+        820
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## IMAGE PRODUCTS\n** SOLO DA EL URL **",
+        "height": 80
+      },
+      "id": "52f51e5c-12e0-434e-ad94-28a4ef85ae49",
+      "name": "Sticky Note20",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1360,
+        840
+      ]
+    },
+    {
+      "parameters": {
+        "values": {
+          "string": [
+            {
+              "name": "id",
+              "value": "={{$json.id.toString() }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "d613d380-2773-4b02-adea-9fd9ddcda565",
+      "name": "Set",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        800,
+        1040
+      ]
+    },
+    {
+      "parameters": {
+        "values": {
+          "string": [
+            {
+              "name": "id",
+              "value": "={{$json.id.toString() }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "dc42eaab-952c-4e0f-a0c8-f6adec6b57d7",
+      "name": "Set1",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        820,
+        1420
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://88dc1b64a2edf718fd9d09d2785ad456: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@ullenboombaby.myshopify.com/admin/api/2023-04/themes.json?lim=150",
+        "options": {}
+      },
+      "id": "75ea7198-d603-4ea1-89b6-06537f9cd6c5",
+      "name": "HTTP Request9",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        260,
+        3320
+      ]
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "themes",
+        "options": {}
+      },
+      "id": "512c25fd-48f7-4824-b260-ae4c83688da5",
+      "name": "Item Lists8",
+      "type": "n8n-nodes-base.itemLists",
+      "typeVersion": 1,
+      "position": [
+        680,
+        3320
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://88dc1b64a2edf718fd9d09d2785ad456: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@ullenboombaby.myshopify.com/admin/api/2023-04/pages.json",
+        "options": {}
+      },
+      "id": "ef880510-1c1b-47c1-be7d-a06f94319f7a",
+      "name": "HTTP Request10",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        260,
+        3580
+      ]
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "pages",
+        "options": {}
+      },
+      "id": "d2a9cec1-e5b9-4e59-8b40-88e2f5655f4e",
+      "name": "Item Lists9",
+      "type": "n8n-nodes-base.itemLists",
+      "typeVersion": 1,
+      "position": [
+        680,
+        3580
+      ]
+    },
+    {
+      "parameters": {
+        "values": {
+          "string": [
+            {
+              "name": "id",
+              "value": "={{$json.id.toString() }} "
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "cd547546-4f6f-4615-a514-754634313503",
+      "name": "Set2",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        900,
+        3320
+      ]
+    },
+    {
+      "parameters": {
+        "values": {
+          "string": [
+            {
+              "name": "id",
+              "value": "={{$json.id.toString() }}  "
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "b0b2bcb4-aeed-4568-b094-b1aaad351110",
+      "name": "Set3",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        900,
+        3580
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "toFile",
+        "fileFormat": "csv",
+        "options": {
+          "fileName": "pages.csv"
+        }
+      },
+      "id": "e2e31ca3-f110-46b0-bb18-c497a6174304",
+      "name": "Spreadsheet File7",
+      "type": "n8n-nodes-base.spreadsheetFile",
+      "typeVersion": 1,
+      "position": [
+        1120,
+        3580
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "toFile",
+        "fileFormat": "csv",
+        "options": {
+          "fileName": "theme.csv"
+        }
+      },
+      "id": "e0398bfc-4253-4a73-9e89-5b9d440aa0df",
+      "name": "Spreadsheet File8",
+      "type": "n8n-nodes-base.spreadsheetFile",
+      "typeVersion": 1,
+      "position": [
+        1120,
+        3320
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## Pages",
+        "height": 80,
+        "width": 150
+      },
+      "id": "447a5e48-7cc0-49c4-a22a-346551ddb073",
+      "name": "Sticky Note10",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        240,
+        3740
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## Themes",
+        "height": 80,
+        "width": 152.9599999999998
+      },
+      "id": "0ef43330-6da1-4049-b9fc-3c316ddbce8d",
+      "name": "Sticky Note11",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        240,
+        3480
+      ]
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "HTTP Request": {
+      "main": [
+        [
+          {
+            "node": "Item Lists1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request1": {
+      "main": [
+        [
+          {
+            "node": "Item Lists3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request2": {
+      "main": [
+        [
+          {
+            "node": "Item Lists2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request3": {
+      "main": [
+        [
+          {
+            "node": "Item Lists4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request4": {
+      "main": [
+        [
+          {
+            "node": "Item Lists5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request6": {
+      "main": [
+        [
+          {
+            "node": "Item Lists",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request7": {
+      "main": [
+        [
+          {
+            "node": "Item Lists6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge": {
+      "main": [
+        [
+          {
+            "node": "Spreadsheet File",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "HTTP Request16",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request8": {
+      "main": [
+        [
+          {
+            "node": "Item Lists7",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Item Lists": {
+      "main": [
+        [
+          {
+            "node": "Set",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Item Lists1": {
+      "main": [
+        [
+          {
+            "node": "Set1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Item Lists2": {
+      "main": [
+        [
+          {
+            "node": "Spreadsheet File2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Item Lists3": {
+      "main": [
+        [
+          {
+            "node": "Spreadsheet File1",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "HTTP Request5",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "HTTP Request15",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Item Lists4": {
+      "main": [
+        [
+          {
+            "node": "Spreadsheet File3",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "HTTP Request17",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Item Lists5": {
+      "main": [
+        [
+          {
+            "node": "Spreadsheet File4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Item Lists6": {
+      "main": [
+        [
+          {
+            "node": "Spreadsheet File6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Item Lists7": {
+      "main": [
+        [
+          {
+            "node": "Spreadsheet File5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request5": {
+      "main": [
+        [
+          {
+            "node": "Item Lists10",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Item Lists10": {
+      "main": [
+        [
+          {
+            "node": "Spreadsheet File14",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request16": {
+      "main": [
+        [
+          {
+            "node": "Spreadsheet File15",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request17": {
+      "main": [
+        [
+          {
+            "node": "Spreadsheet File16",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set1": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "HTTP Request9": {
+      "main": [
+        [
+          {
+            "node": "Item Lists8",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Item Lists8": {
+      "main": [
+        [
+          {
+            "node": "Set2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request10": {
+      "main": [
+        [
+          {
+            "node": "Item Lists9",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Item Lists9": {
+      "main": [
+        [
+          {
+            "node": "Set3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set2": {
+      "main": [
+        [
+          {
+            "node": "Spreadsheet File8",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set3": {
+      "main": [
+        [
+          {
+            "node": "Spreadsheet File7",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {},
+  "versionId": "4bd2c82e-9816-4161-8a0f-908c925411cd",
+  "id": "5",
+  "meta": {
+    "instanceId": "9eab64f66f430d2752e841d511cc7c2d87397ff6ea605c83e83ae63a5650b543"
+  },
+  "tags": []
+}
