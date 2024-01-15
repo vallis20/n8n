@@ -4,13 +4,12 @@
     {
       "parameters": {
         "method": "POST",
-        "url": "https://b1ba016d6f3d08541490a71388849282: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@aventuramusica.myshopify.com/admin/api/2021-10/orders.json",
+        "url": "=https://b1ba016d6f3d08541490a71388849282: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@aventuramusica.myshopify.com/admin/api/2021-10/orders.json",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "shopifyAccessTokenApi",
         "sendBody": true,
-        "bodyParameters": {
-          "parameters": [
-            {}
-          ]
-        },
+        "specifyBody": "json",
+        "jsonBody": "={\n    \"order\": {\n        \"line_items\": [\n            {\n                \"variant_id\": 123456789,\n                \"quantity\": 2,\n                \"price\": 25.99,\n                \"name\": \"Nombre del producto\",\n                \"title\": \"Título del producto\"\n            }\n        ],\n        \"customer\": {\n            \"first_name\": \"John\",\n            \"last_name\": \"Doe\",\n            \"email\": \"john@example.com\"\n        },\n        \"billing_address\": {\n            \"address1\": \"123 Main St\",\n            \"city\": \"Anytown\",\n            \"province\": \"CA\",\n            \"zip\": \"12345\",\n            \"country\": \"United States\"\n        }\n    }\n}",
         "options": {}
       },
       "id": "43df082b-b9d4-495d-903b-85489f9ffb5d",
@@ -18,13 +17,19 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 3,
       "position": [
-        980,
+        1160,
         700
-      ]
+      ],
+      "credentials": {
+        "shopifyAccessTokenApi": {
+          "id": "1",
+          "name": "Shopify Access Token account"
+        }
+      }
     },
     {
       "parameters": {
-        "filePath": "/Users/enavarrete/Downloads/shopify/orders.csv",
+        "filePath": "/Users/vallisguerrero/Downloads/orders.csv",
         "dataPropertyName": "=data"
       },
       "id": "0da2102d-a1cd-40f2-aaf5-a00fac1921e6",
@@ -66,7 +71,12 @@
     {
       "parameters": {
         "method": "POST",
-        "url": "https://b1ba016d6f3d08541490a71388849282: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@aventuramusica.myshopify.com/admin/api/2021-10/products.json",
+        "url": "=https://b1ba016d6f3d08541490a71388849282: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@aventuramusica.myshopify.com/admin/api/2021-10/products.json",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "shopifyAccessTokenApi",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"product\": {\n    \"title\": \"Tabla de snowboard Burton Custom Freestyle 151\",\n    \"body_html\": \"<strong>¡Buena tabla de snowboard!</strong>\",\n    \"vendor\": \"Burton\",\n    \"product_type\": \"Snowboard\",\n    \"variants\": [\n      {\n        \"option1\": \"Azul\",\n        \"option2\": \"155\"\n      },\n      {\n        \"option1\": \"Negro\",\n        \"option2\": \"159\"\n      }\n    ],\n    \"options\": [\n      {\n        \"name\": \"Color\",\n        \"values\": \"Azul,Negro\"\n      },\n      {\n        \"name\": \"Tamaño\",\n        \"values\": \"155,159\"\n      }\n    ]\n  }\n}\n",
         "options": {}
       },
       "id": "7560cff4-2698-4881-8623-3bb690fa3e3a",
@@ -76,10 +86,18 @@
       "position": [
         1120,
         1140
-      ]
+      ],
+      "credentials": {
+        "shopifyAccessTokenApi": {
+          "id": "1",
+          "name": "Shopify Access Token account"
+        }
+      }
     },
     {
-      "parameters": {},
+      "parameters": {
+        "filePath": "/Users/vallisguerrero/Downloads/products.csv"
+      },
       "id": "b5d26cc7-972c-41fb-8902-c6c3d561fab0",
       "name": "Read Binary File6",
       "type": "n8n-nodes-base.readBinaryFile",
@@ -104,7 +122,14 @@
     },
     {
       "parameters": {
-        "keepOnlySet": true,
+        "values": {
+          "string": [
+            {
+              "name": "id",
+              "value": "={{ $json.id.toString()}}"
+            }
+          ]
+        },
         "options": {}
       },
       "id": "91d33bbf-3e30-4639-a89d-793c9e414a53",
@@ -162,6 +187,11 @@
       "parameters": {
         "method": "POST",
         "url": "https://b1ba016d6f3d08541490a71388849282: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@aventuramusica.myshopify.com/admin/api/2021-10/orders.json",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "shopifyAccessTokenApi",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"customer\": {\n    \"first_name\": \"Juan\",\n    \"last_name\": \"Pérez\",\n    \"email\": \"juan@example.com\",\n    \"phone\": \"555-123-4567\",\n    \"addresses\": [\n      {\n        \"address1\": \"123 Main St\",\n        \"city\": \"Ciudad\",\n        \"province\": \"Estado\",\n        \"zip\": \"12345\",\n        \"country\": \"México\"\n      }\n    ]\n  }\n}\n",
         "options": {}
       },
       "id": "4e2626db-4269-4505-aece-a096338314fc",
@@ -171,10 +201,18 @@
       "position": [
         1120,
         1440
-      ]
+      ],
+      "credentials": {
+        "shopifyAccessTokenApi": {
+          "id": "1",
+          "name": "Shopify Access Token account"
+        }
+      }
     },
     {
-      "parameters": {},
+      "parameters": {
+        "filePath": "/Users/vallisguerrero/Downloads/customers.csv"
+      },
       "id": "fba583bd-0204-4198-ab6b-5c5b7a2d5024",
       "name": "Read Binary File7",
       "type": "n8n-nodes-base.readBinaryFile",
@@ -199,7 +237,14 @@
     },
     {
       "parameters": {
-        "keepOnlySet": true,
+        "values": {
+          "string": [
+            {
+              "name": "id",
+              "value": "{{json.id.toString()}}"
+            }
+          ]
+        },
         "options": {}
       },
       "id": "3718f22c-874f-471b-a33b-ada29301b215",
@@ -215,6 +260,11 @@
       "parameters": {
         "method": "POST",
         "url": "https://b1ba016d6f3d08541490a71388849282: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@aventuramusica.myshopify.com/admin/api/2021-10/marketing_events.json",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "shopifyAccessTokenApi",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"marketing\": {\n    \"first_name\": \"Juan\",\n    \"last_name\": \"Pérez\",\n    \"email\": \"juan@example.com\",\n    \"phone\": \"555-123-4567\",\n    \"addresses\": [\n      {\n        \"address1\": \"123 Main St\",\n        \"city\": \"Ciudad\",\n        \"province\": \"Estado\",\n        \"zip\": \"12345\",\n        \"country\": \"México\"\n      }\n    ]\n  }\n}\n",
         "options": {}
       },
       "id": "3c688181-0245-4a0e-9a20-2ada1d47d2e1",
@@ -224,10 +274,18 @@
       "position": [
         1100,
         1940
-      ]
+      ],
+      "credentials": {
+        "shopifyAccessTokenApi": {
+          "id": "1",
+          "name": "Shopify Access Token account"
+        }
+      }
     },
     {
-      "parameters": {},
+      "parameters": {
+        "filePath": "/Users/vallisguerrero/Downloads/Marketing.csv"
+      },
       "id": "395d5e7c-89f5-41b6-b6ac-8aaf3f34ddb9",
       "name": "Read Binary File8",
       "type": "n8n-nodes-base.readBinaryFile",
@@ -253,6 +311,14 @@
     {
       "parameters": {
         "keepOnlySet": true,
+        "values": {
+          "string": [
+            {
+              "name": "id",
+              "value": "{{json.id.toString()}}"
+            }
+          ]
+        },
         "options": {}
       },
       "id": "e66962d0-fb70-47db-a444-d8be907071ea",
@@ -262,19 +328,6 @@
       "position": [
         800,
         1940
-      ]
-    },
-    {
-      "parameters": {
-        "content": "## FALTARIA CONTENT\npodria agregarse metefield \n"
-      },
-      "id": "94894d2d-4d83-4e90-9d26-4fb1ce7bcb4e",
-      "name": "Sticky Note20",
-      "type": "n8n-nodes-base.stickyNote",
-      "typeVersion": 1,
-      "position": [
-        200,
-        1700
       ]
     },
     {
@@ -372,6 +425,27 @@
         1320,
         2380
       ]
+    },
+    {
+      "parameters": {
+        "values": {
+          "string": [
+            {
+              "name": "id",
+              "value": "={{ $json.id.toString() }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "001ae494-3677-4c82-8d65-28df3641618c",
+      "name": "Set1",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        900,
+        700
+      ]
     }
   ],
   "pinData": {},
@@ -391,7 +465,7 @@
       "main": [
         [
           {
-            "node": "HTTP Request",
+            "node": "Set1",
             "type": "main",
             "index": 0
           }
@@ -540,11 +614,22 @@
           }
         ]
       ]
+    },
+    "Set1": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "active": false,
   "settings": {},
-  "versionId": "e29aa1f7-c168-4618-9430-db32ddb2a91d",
+  "versionId": "980ccd89-60c7-416d-82c6-8d6186ed9f14",
   "id": "7",
   "meta": {
     "instanceId": "9eab64f66f430d2752e841d511cc7c2d87397ff6ea605c83e83ae63a5650b543"
