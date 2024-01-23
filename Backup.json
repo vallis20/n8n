@@ -3,6 +3,7 @@
   "nodes": [
     {
       "parameters": {
+        "fileName": "={{ $node.Set1.json[\"RUTA EN DONDE SE ENCUENTRAN LOS ARCHIVOS \"].CSV }}reports.csv",
         "options": {}
       },
       "id": "18f42c6d-8117-4100-9ea5-5014fe4608ca",
@@ -10,7 +11,7 @@
       "type": "n8n-nodes-base.writeBinaryFile",
       "typeVersion": 1,
       "position": [
-        1360,
+        1580,
         4880
       ]
     },
@@ -23,7 +24,7 @@
       "type": "n8n-nodes-base.spreadsheetFile",
       "typeVersion": 1,
       "position": [
-        1140,
+        1360,
         4880
       ]
     },
@@ -34,12 +35,13 @@
       "type": "n8n-nodes-base.merge",
       "typeVersion": 2,
       "position": [
-        920,
+        1140,
         4880
       ]
     },
     {
       "parameters": {
+        "fileName": "={{ $node.Set1.json[\"RUTA EN DONDE SE ENCUENTRAN LOS ARCHIVOS \"].CSV }}marketing.csv",
         "options": {}
       },
       "id": "af62761d-9fde-435e-ae22-fcac36fbc700",
@@ -47,7 +49,7 @@
       "type": "n8n-nodes-base.writeBinaryFile",
       "typeVersion": 1,
       "position": [
-        1360,
+        1580,
         4400
       ]
     },
@@ -60,7 +62,7 @@
       "type": "n8n-nodes-base.spreadsheetFile",
       "typeVersion": 1,
       "position": [
-        1140,
+        1360,
         4400
       ]
     },
@@ -71,12 +73,13 @@
       "type": "n8n-nodes-base.merge",
       "typeVersion": 2,
       "position": [
-        920,
+        1140,
         4400
       ]
     },
     {
       "parameters": {
+        "fileName": "={{ $node.Set1.json[\"RUTA EN DONDE SE ENCUENTRAN LOS ARCHIVOS \"].CSV }}discounts.csv",
         "options": {}
       },
       "id": "2468a140-848d-4cfb-9874-dd6b126abd61",
@@ -84,20 +87,24 @@
       "type": "n8n-nodes-base.writeBinaryFile",
       "typeVersion": 1,
       "position": [
-        1340,
+        1560,
         3800
       ]
     },
     {
       "parameters": {
-        "options": {}
+        "operation": "toFile",
+        "fileFormat": "csv",
+        "options": {
+          "fileName": ""
+        }
       },
       "id": "00421ec9-19ff-42f0-b16c-5ec730898bcd",
       "name": "Spreadsheet File24",
       "type": "n8n-nodes-base.spreadsheetFile",
       "typeVersion": 1,
       "position": [
-        1120,
+        1340,
         3800
       ]
     },
@@ -108,12 +115,13 @@
       "type": "n8n-nodes-base.merge",
       "typeVersion": 2,
       "position": [
-        900,
+        1120,
         3800
       ]
     },
     {
       "parameters": {
+        "fileName": "={{ $node.Set1.json[\"RUTA EN DONDE SE ENCUENTRAN LOS ARCHIVOS \"].CSV }}customers.csv",
         "options": {}
       },
       "id": "04200abe-dd86-4ab5-8f68-fb86a1455e3c",
@@ -121,20 +129,24 @@
       "type": "n8n-nodes-base.writeBinaryFile",
       "typeVersion": 1,
       "position": [
-        1160,
+        1380,
         3100
       ]
     },
     {
       "parameters": {
-        "options": {}
+        "operation": "toFile",
+        "fileFormat": "csv",
+        "options": {
+          "fileName": "customers.csv"
+        }
       },
       "id": "0afa7355-3448-4fa9-b69c-204f4d4ccb22",
       "name": "Spreadsheet File23",
       "type": "n8n-nodes-base.spreadsheetFile",
       "typeVersion": 1,
       "position": [
-        1000,
+        1220,
         3100
       ]
     },
@@ -145,12 +157,13 @@
       "type": "n8n-nodes-base.merge",
       "typeVersion": 2,
       "position": [
-        860,
+        1080,
         3100
       ]
     },
     {
       "parameters": {
+        "fileName": "={{ $node.Set1.json[\"RUTA EN DONDE SE ENCUENTRAN LOS ARCHIVOS \"].CSV }}products.csv",
         "options": {}
       },
       "id": "65014bef-ec9a-46fc-ac35-26f9889283db",
@@ -159,19 +172,6 @@
       "typeVersion": 1,
       "position": [
         1220,
-        2400
-      ]
-    },
-    {
-      "parameters": {
-        "options": {}
-      },
-      "id": "9fd4e969-7352-4c78-895c-1a7b6988be80",
-      "name": "Spreadsheet File22",
-      "type": "n8n-nodes-base.spreadsheetFile",
-      "typeVersion": 1,
-      "position": [
-        1040,
         2400
       ]
     },
@@ -193,13 +193,14 @@
       "type": "n8n-nodes-base.merge",
       "typeVersion": 2,
       "position": [
-        800,
+        1020,
         1760
-      ]
+      ],
+      "alwaysOutputData": true
     },
     {
       "parameters": {
-        "fileName": "/Users/enavarrete/Documents/pruebashopify/orders.csv",
+        "fileName": "={{ $node.Set1.json[\"RUTA EN DONDE SE ENCUENTRAN LOS ARCHIVOS \"].CSV }}orders.csv ",
         "options": {
           "append": "={{ true }}"
         }
@@ -209,7 +210,7 @@
       "type": "n8n-nodes-base.writeBinaryFile",
       "typeVersion": 1,
       "position": [
-        1200,
+        1420,
         1740
       ]
     },
@@ -226,7 +227,7 @@
       "type": "n8n-nodes-base.spreadsheetFile",
       "typeVersion": 1,
       "position": [
-        1000,
+        1220,
         1720
       ]
     },
@@ -246,7 +247,7 @@
     },
     {
       "parameters": {
-        "url": "https://b1ba016d6f3d08541490a71388849282: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@aventuramusica.myshopify.com/admin/api/2021-10/reports.json?since_id=10",
+        "url": "=https://{{ $json[\"API KEY\"] }}:{{ $json[\"API access token\"] }}@{{ $json[\"Store Name\"] }}.myshopify.com/admin/api/2021-10/reports.json?since_id=10",
         "options": {}
       },
       "id": "b07f8088-2d83-4e43-b13c-22a1404cd820",
@@ -254,7 +255,7 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 3,
       "position": [
-        80,
+        160,
         4760
       ]
     },
@@ -274,15 +275,15 @@
     },
     {
       "parameters": {
-        "jsCode": "// Obtener los datos del item list y del spreadsheet\nconst itemsData = items[0].json;\nconst sheetData = items[1].json;\n\n// Obtener los valores de la propiedad \"name\"\nconst itemName = itemsData.order_number;\nconst sheetName = sheetData['order_number'];\n\n// Comparar los valores de la propiedad \"name\"\nif (itemName === sheetName) {\n  // Si los nombres son iguales, no hacer nada\n  return [];\n   \n\n} else {\n  // Si los nombres son diferentes, devolver el objeto JSON del item list\n   return [{ json: itemsData }];\n}"
+        "jsCode": "// Obtener los datos del item list y del spreadsheet\nconst itemsData = items[0].json;\nconst sheetData = items[1].json;\n\n// Obtener los valores de la propiedad \"name\"\nconst itemName = itemsData.id;\nconst sheetName = sheetData['id'];\n\n// Comparar los valores de la propiedad \"name\"\nif (itemName === sheetName) {\n  // Si los nombres son iguales, no hacer nada\n  return [];\n   \n\n} else {\n  // Si los nombres son diferentes, devolver el objeto JSON del item list\n   return [{ json: itemsData }];\n}"
       },
       "id": "f63306c5-f412-43b8-bf28-7b65a9c510ed",
       "name": "Code5",
       "type": "n8n-nodes-base.code",
       "typeVersion": 1,
       "position": [
-        700,
-        4880
+        880,
+        4820
       ]
     },
     {
@@ -294,13 +295,13 @@
       "type": "n8n-nodes-base.spreadsheetFile",
       "typeVersion": 1,
       "position": [
-        360,
+        400,
         4960
       ]
     },
     {
       "parameters": {
-        "fieldToSplitOut": "orders",
+        "fieldToSplitOut": "reports",
         "options": {}
       },
       "id": "00720cca-f025-4168-812b-87f05b2a19a6",
@@ -314,20 +315,20 @@
     },
     {
       "parameters": {
-        "filePath": "/Users/enavarrete/Documents/pruebashopify/orders.csv"
+        "filePath": "={{ $json[\"RUTA EN DONDE SE ENCUENTRAN LOS ARCHIVOS \"].CSV }}reports.csv"
       },
       "id": "7504cd07-f9b9-463f-bbb6-c24ecf1e1348",
       "name": "Read Binary File10",
       "type": "n8n-nodes-base.readBinaryFile",
       "typeVersion": 1,
       "position": [
-        140,
+        160,
         4960
       ]
     },
     {
       "parameters": {
-        "url": "https://b1ba016d6f3d08541490a71388849282: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@aventuramusica.myshopify.com/admin/api/2021-10/marketing_events.json",
+        "url": "=https://{{ $json[\"API KEY\"] }}:{{ $json[\"API access token\"] }}@{{ $json[\"Store Name\"] }}.myshopify.com/admin/api/2021-10/marketing_events.json",
         "options": {}
       },
       "id": "62bcda0f-b28a-45d1-bda3-9e95fcfbbaac",
@@ -355,14 +356,14 @@
     },
     {
       "parameters": {
-        "jsCode": "// Obtener los datos del item list y del spreadsheet\nconst itemsData = items[0].json;\nconst sheetData = items[1].json;\n\n// Obtener los valores de la propiedad \"name\"\nconst itemName = itemsData.order_number;\nconst sheetName = sheetData['order_number'];\n\n// Comparar los valores de la propiedad \"name\"\nif (itemName === sheetName) {\n  // Si los nombres son iguales, no hacer nada\n  return [];\n   \n\n} else {\n  // Si los nombres son diferentes, devolver el objeto JSON del item list\n   return [{ json: itemsData }];\n}"
+        "jsCode": "// Obtener los datos del item list y del spreadsheet\nconst itemsData = items[0].json;\nconst sheetData = items[1].json;\n\n// Obtener los valores de la propiedad \"name\"\nconst itemName = itemsData.id;\nconst sheetName = sheetData['id'];\n\n// Comparar los valores de la propiedad \"name\"\nif (itemName === sheetName) {\n  // Si los nombres son iguales, no hacer nada\n  return [];\n   \n\n} else {\n  // Si los nombres son diferentes, devolver el objeto JSON del item list\n   return [{ json: itemsData }];\n}"
       },
       "id": "f6663794-43d6-4a03-ab97-c28c6d8ffe2f",
       "name": "Code4",
       "type": "n8n-nodes-base.code",
       "typeVersion": 1,
       "position": [
-        700,
+        920,
         4300
       ]
     },
@@ -381,7 +382,7 @@
     },
     {
       "parameters": {
-        "fieldToSplitOut": "orders",
+        "fieldToSplitOut": "marketing_events",
         "options": {}
       },
       "id": "3d4923a5-37cc-47ad-8148-8124f273a1d9",
@@ -391,11 +392,12 @@
       "position": [
         360,
         4180
-      ]
+      ],
+      "alwaysOutputData": true
     },
     {
       "parameters": {
-        "filePath": "/Users/enavarrete/Documents/pruebashopify/orders.csv"
+        "filePath": "={{ $json[\"RUTA EN DONDE SE ENCUENTRAN LOS ARCHIVOS \"].CSV }}marketing.csv"
       },
       "id": "43c261a9-438a-4d9b-b5c4-ec36832783e7",
       "name": "Read Binary File9",
@@ -408,7 +410,7 @@
     },
     {
       "parameters": {
-        "url": "https://b1ba016d6f3d08541490a71388849282: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@aventuramusica.myshopify.com/admin/api/2021-10/price_rules.json",
+        "url": "=https://{{ $json[\"API KEY\"] }}:{{ $json[\"API access token\"] }}@{{ $json[\"Store Name\"] }}.myshopify.com/admin/api/2021-10/price_rules.json",
         "options": {}
       },
       "id": "ffb4370c-ab3f-43d8-a2cf-92002c536b82",
@@ -417,12 +419,12 @@
       "typeVersion": 3,
       "position": [
         120,
-        3580
+        3560
       ]
     },
     {
       "parameters": {
-        "url": "https://b1ba016d6f3d08541490a71388849282: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@aventuramusica.myshopify.com/admin/api/2021-10/customers.json",
+        "url": "=https://{{ $json[\"API KEY\"] }}:{{ $json[\"API access token\"] }}@{{ $json[\"Store Name\"] }}.myshopify.com/admin/api/2021-10/customers.json",
         "options": {}
       },
       "id": "5d2a1dc1-aff0-4619-b981-e42e3c0c22ed",
@@ -450,14 +452,14 @@
     },
     {
       "parameters": {
-        "jsCode": "// Obtener los datos del item list y del spreadsheet\nconst itemsData = items[0].json;\nconst sheetData = items[1].json;\n\n// Obtener los valores de la propiedad \"name\"\nconst itemName = itemsData.order_number;\nconst sheetName = sheetData['order_number'];\n\n// Comparar los valores de la propiedad \"name\"\nif (itemName === sheetName) {\n  // Si los nombres son iguales, no hacer nada\n  return [];\n   \n\n} else {\n  // Si los nombres son diferentes, devolver el objeto JSON del item list\n   return [{ json: itemsData }];\n}"
+        "jsCode": "// Obtener los datos del item list y del spreadsheet\nconst itemsData = items[0].json;\nconst sheetData = items[1].json;\n\n// Obtener los valores de la propiedad \"name\"\nconst itemName = itemsData.id;\nconst sheetName = sheetData['discount_id'];\n\n// Comparar los valores de la propiedad \"name\"\nif (itemName === sheetName) {\n  // Si los nombres son iguales, no hacer nada\n  return [];\n   \n\n} else {\n  // Si los nombres son diferentes, devolver el objeto JSON del item list\n   return [{ json: itemsData }];\n}"
       },
       "id": "2a8ab753-4d72-4719-b7a0-c8a9db164643",
       "name": "Code3",
       "type": "n8n-nodes-base.code",
       "typeVersion": 1,
       "position": [
-        680,
+        900,
         3700
       ]
     },
@@ -476,7 +478,7 @@
     },
     {
       "parameters": {
-        "fieldToSplitOut": "orders",
+        "fieldToSplitOut": "price_rules",
         "options": {}
       },
       "id": "f7a238dc-ab21-411c-ba94-40ea343228d2",
@@ -490,7 +492,7 @@
     },
     {
       "parameters": {
-        "filePath": "/Users/enavarrete/Documents/pruebashopify/orders.csv"
+        "filePath": "={{ $json[\"RUTA EN DONDE SE ENCUENTRAN LOS ARCHIVOS \"].CSV }}discounts.csv"
       },
       "id": "8a125148-6ecb-4fd7-b09a-3b97350f8e3a",
       "name": "Read Binary File8",
@@ -517,14 +519,14 @@
     },
     {
       "parameters": {
-        "jsCode": "// Obtener los datos del item list y del spreadsheet\nconst itemsData = items[0].json;\nconst sheetData = items[1].json;\n\n// Obtener los valores de la propiedad \"name\"\nconst itemName = itemsData.order_number;\nconst sheetName = sheetData['order_number'];\n\n// Comparar los valores de la propiedad \"name\"\nif (itemName === sheetName) {\n  // Si los nombres son iguales, no hacer nada\n  return [];\n   \n\n} else {\n  // Si los nombres son diferentes, devolver el objeto JSON del item list\n   return [{ json: itemsData }];\n}"
+        "jsCode": "// Obtener los datos del item list y del spreadsheet\nconst itemsData = items[0].json;\nconst sheetData = items[1].json;\n\n// Obtener los valores de la propiedad \"name\"\nconst itemName = itemsData.id;\nconst sheetName = sheetData['id'];\n\n// Comparar los valores de la propiedad \"name\"\nif (itemName === sheetName) {\n  // Si los nombres son iguales, no hacer nada\n  return [];\n   \n\n} else {\n  // Si los nombres son diferentes, devolver el objeto JSON del item list\n   return [{ json: itemsData }];\n}"
       },
       "id": "337db005-b5ba-4719-bb1c-29191499c4b3",
       "name": "Code2",
       "type": "n8n-nodes-base.code",
       "typeVersion": 1,
       "position": [
-        680,
+        900,
         3020
       ]
     },
@@ -543,7 +545,7 @@
     },
     {
       "parameters": {
-        "fieldToSplitOut": "orders",
+        "fieldToSplitOut": "customers",
         "options": {}
       },
       "id": "00a9a8f1-4814-46b2-9223-f3a75f9d9889",
@@ -557,20 +559,20 @@
     },
     {
       "parameters": {
-        "filePath": "/Users/enavarrete/Documents/pruebashopify/orders.csv"
+        "filePath": "={{ $json[\"RUTA EN DONDE SE ENCUENTRAN LOS ARCHIVOS \"].CSV }}customers.csv"
       },
       "id": "dfdbd838-8c42-486b-897f-37f9711b37f1",
       "name": "Read Binary File7",
       "type": "n8n-nodes-base.readBinaryFile",
       "typeVersion": 1,
       "position": [
-        120,
+        100,
         3100
       ]
     },
     {
       "parameters": {
-        "url": "https://b1ba016d6f3d08541490a71388849282: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@aventuramusica.myshopify.com/admin/api/2021-10/products.json",
+        "url": "=https://{{ $json[\"API KEY\"] }}:{{ $json[\"API access token\"] }}@{{ $json[\"Store Name\"] }}.myshopify.com/admin/api/2021-10/products.json",
         "options": {}
       },
       "id": "14b19e51-b7e7-4548-b810-081fecf3bdab",
@@ -598,7 +600,7 @@
     },
     {
       "parameters": {
-        "jsCode": "// Obtener los datos del item list y del spreadsheet\nconst itemsData = items[0].json;\nconst sheetData = items[1].json;\n\n// Obtener los valores de la propiedad \"name\"\nconst itemName = itemsData.order_number;\nconst sheetName = sheetData['order_number'];\n\n// Comparar los valores de la propiedad \"name\"\nif (itemName === sheetName) {\n  // Si los nombres son iguales, no hacer nada\n  return [];\n   \n\n} else {\n  // Si los nombres son diferentes, devolver el objeto JSON del item list\n   return [{ json: itemsData }];\n}"
+        "jsCode": "// Obtener los datos del item list y del spreadsheet\nconst itemsData = items[0].json;\nconst sheetData = items[1].json;\n\n// Obtener los valores de la propiedad \"name\"\nconst itemName = itemsData.id;\nconst sheetName = sheetData['id'];\n\n// Comparar los valores de la propiedad \"name\"\nif (itemName === sheetName) {\n  // Si los nombres son iguales, no hacer nada\n  return [];\n   \n\n} else {\n  // Si los nombres son diferentes, devolver el objeto JSON del item list\n   return [{ json: itemsData }];\n}"
       },
       "id": "153d02b7-a4ab-49ad-9901-a47c10c12e19",
       "name": "Code1",
@@ -607,7 +609,8 @@
       "position": [
         660,
         2340
-      ]
+      ],
+      "alwaysOutputData": true
     },
     {
       "parameters": {
@@ -624,7 +627,7 @@
     },
     {
       "parameters": {
-        "fieldToSplitOut": "orders",
+        "fieldToSplitOut": "products",
         "options": {}
       },
       "id": "dbcb804a-c67d-4fc1-b156-69c5772da63c",
@@ -638,7 +641,7 @@
     },
     {
       "parameters": {
-        "filePath": "/Users/enavarrete/Documents/pruebashopify/orders.csv"
+        "filePath": "={{ $json[\"RUTA EN DONDE SE ENCUENTRAN LOS ARCHIVOS \"].CSV }}products.csv"
       },
       "id": "d707a06b-e72c-450c-932e-96685c80b0e3",
       "name": "Read Binary File6",
@@ -646,21 +649,21 @@
       "typeVersion": 1,
       "position": [
         100,
-        2420
+        2460
       ]
     },
     {
       "parameters": {
-        "content": "## Orders\nsolo falta agregar el que se actualice el archivo",
-        "height": 106.32601599999995
+        "content": "## Orders\n",
+        "height": 80
       },
       "id": "03ef3aea-5a9b-4d32-bf04-a7ef4a1ec044",
       "name": "Sticky Note21",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        80,
-        2000
+        120,
+        1980
       ]
     },
     {
@@ -672,8 +675,8 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 1,
       "position": [
-        520,
-        1700
+        780,
+        1640
       ]
     },
     {
@@ -699,13 +702,13 @@
       "type": "n8n-nodes-base.itemLists",
       "typeVersion": 1,
       "position": [
-        200,
+        260,
         1620
       ]
     },
     {
       "parameters": {
-        "filePath": "/Users/enavarrete/Documents/pruebashopify/orders.csv"
+        "filePath": "={{ $json[\"RUTA EN DONDE SE ENCUENTRAN LOS ARCHIVOS \"].CSV }}orders.csv"
       },
       "id": "622a892c-ca6b-46d5-83dc-d49e44a5c10c",
       "name": "Read Binary File5",
@@ -718,7 +721,7 @@
     },
     {
       "parameters": {
-        "url": "https://b1ba016d6f3d08541490a71388849282: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@aventuramusica.myshopify.com/admin/api/2021-10/orders.json?status=any",
+        "url": "=https://{{ $json[\"API KEY\"] }}:{{ $json[\"API access token\"] }}@{{ $json[\"Store Name\"] }}.myshopify.com/admin/api/2021-10/orders.json?status=any  ",
         "options": {}
       },
       "id": "da97f6bf-3511-4874-912b-626c23524747",
@@ -726,8 +729,219 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 3,
       "position": [
-        -20,
+        100,
         1620
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "toFile",
+        "fileFormat": "csv",
+        "options": {
+          "fileName": "orders.csv"
+        }
+      },
+      "id": "128eb673-6f44-493d-a807-c7dc2c1892f6",
+      "name": "Spreadsheet File",
+      "type": "n8n-nodes-base.spreadsheetFile",
+      "typeVersion": 1,
+      "position": [
+        1040,
+        2420
+      ]
+    },
+    {
+      "parameters": {
+        "values": {
+          "string": [
+            {
+              "name": "id",
+              "value": "={{$json.id.toString() }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "afdc1104-ff89-4e08-8396-06fc7d71c2af",
+      "name": "Set",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        500,
+        2240
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "c2a64d03-60c8-4949-a39c-0cdcef108e28",
+      "name": "When clicking \"Execute Workflow\"",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        1760,
+        1160
+      ]
+    },
+    {
+      "parameters": {
+        "authentication": "basicAuth",
+        "endpoint": "=https://b1ba016d6f3d08541490a71388849282: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@aventuramusica.myshopify.com/admin/api/2021-10/graphql.json",
+        "requestFormat": "json",
+        "query": "={\n  priceRules(first: 10) {\n    edges {\n      node {\n        id\n        title\n        startsAt\n        endsAt\n      }\n    }\n  }\n}\n",
+        "responseFormat": "string"
+      },
+      "id": "1572f3b2-4a42-43d7-b156-7706014d2f75",
+      "name": "GraphQL",
+      "type": "n8n-nodes-base.graphql",
+      "typeVersion": 1,
+      "position": [
+        1960,
+        1160
+      ],
+      "credentials": {
+        "httpBasicAuth": {
+          "id": "3",
+          "name": "Unnamed credential"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "keepOnlySet": true,
+        "values": {
+          "string": [
+            {
+              "name": "API KEY",
+              "value": "b1ba016d6f3d08541490a71388849282"
+            },
+            {
+              "name": "API access token",
+              "value": "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"
+            },
+            {
+              "name": "Store Name",
+              "value": "aventuramusica"
+            },
+            {
+              "name": "RUTA EN DONDE SE ENCUENTRAN LOS ARCHIVOS .CSV",
+              "value": "/Users/vallisguerrero/Desktop/"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "6c667e12-d05a-46cb-b723-af929e08a30c",
+      "name": "Set1",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        -340,
+        3320
+      ]
+    },
+    {
+      "parameters": {
+        "values": {
+          "string": [
+            {
+              "name": "id",
+              "value": "={{ $json.id.toString()}}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "f06e0ca9-b394-41bc-ba68-f7fde52d1a56",
+      "name": "Set2",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        480,
+        1620
+      ]
+    },
+    {
+      "parameters": {
+        "values": {
+          "string": [
+            {
+              "name": "id",
+              "value": "={{ $json.id.toString()}}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "49110a5d-9414-4167-9c6d-683cd9229d4b",
+      "name": "Set3",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        560,
+        2900
+      ]
+    },
+    {
+      "parameters": {
+        "values": {
+          "string": [
+            {
+              "name": "id",
+              "value": "={{ $json.id.toString()}}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "7d0399c5-b75f-4ea5-adca-b87d01d1053f",
+      "name": "Set4",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        560,
+        3580
+      ]
+    },
+    {
+      "parameters": {
+        "values": {
+          "string": [
+            {
+              "name": "id",
+              "value": "={{ $json.id.toString()}}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "404e88d8-809d-4097-b2d8-b2c1b77b599c",
+      "name": "Set5",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        580,
+        4180
+      ]
+    },
+    {
+      "parameters": {
+        "values": {
+          "string": [
+            {
+              "name": "id",
+              "value": "{{ $json.id.toString()}}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "78a4c979-5d89-4c6f-a9f4-b93c8731e67e",
+      "name": "Set6",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        580,
+        4760
       ]
     }
   ],
@@ -821,22 +1035,11 @@
         ]
       ]
     },
-    "Spreadsheet File22": {
-      "main": [
-        [
-          {
-            "node": "Write Binary File1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "Merge2": {
       "main": [
         [
           {
-            "node": "Spreadsheet File22",
+            "node": "Spreadsheet File",
             "type": "main",
             "index": 0
           }
@@ -883,6 +1086,11 @@
             "node": "Code5",
             "type": "main",
             "index": 0
+          },
+          {
+            "node": "Merge6",
+            "type": "main",
+            "index": 1
           }
         ]
       ]
@@ -891,7 +1099,7 @@
       "main": [
         [
           {
-            "node": "Code5",
+            "node": "Set6",
             "type": "main",
             "index": 0
           }
@@ -951,7 +1159,7 @@
       "main": [
         [
           {
-            "node": "Code4",
+            "node": "Set5",
             "type": "main",
             "index": 0
           }
@@ -1011,7 +1219,7 @@
       "main": [
         [
           {
-            "node": "Code3",
+            "node": "Set4",
             "type": "main",
             "index": 0
           }
@@ -1071,7 +1279,7 @@
       "main": [
         [
           {
-            "node": "Code2",
+            "node": "Set3",
             "type": "main",
             "index": 0
           }
@@ -1115,14 +1323,14 @@
       "main": [
         [
           {
-            "node": "Merge2",
-            "type": "main",
-            "index": 1
-          },
-          {
             "node": "Code1",
             "type": "main",
             "index": 0
+          },
+          {
+            "node": "Merge2",
+            "type": "main",
+            "index": 1
           }
         ]
       ]
@@ -1131,7 +1339,7 @@
       "main": [
         [
           {
-            "node": "Code1",
+            "node": "Set",
             "type": "main",
             "index": 0
           }
@@ -1191,7 +1399,7 @@
       "main": [
         [
           {
-            "node": "Code",
+            "node": "Set2",
             "type": "main",
             "index": 0
           }
@@ -1219,11 +1427,165 @@
           }
         ]
       ]
+    },
+    "Spreadsheet File": {
+      "main": [
+        [
+          {
+            "node": "Write Binary File1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set": {
+      "main": [
+        [
+          {
+            "node": "Code1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When clicking \"Execute Workflow\"": {
+      "main": [
+        [
+          {
+            "node": "GraphQL",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set1": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request18",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "HTTP Request19",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "HTTP Request20",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "HTTP Request21",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "HTTP Request22",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "HTTP Request24",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Read Binary File10",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Read Binary File9",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Read Binary File8",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Read Binary File7",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Read Binary File6",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Read Binary File5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set2": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set3": {
+      "main": [
+        [
+          {
+            "node": "Code2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set4": {
+      "main": [
+        [
+          {
+            "node": "Code3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set5": {
+      "main": [
+        [
+          {
+            "node": "Code4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set6": {
+      "main": [
+        [
+          {
+            "node": "Code5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "active": false,
   "settings": {},
-  "versionId": "661b3ec5-6439-4005-830a-3cc797564617",
+  "versionId": "bc479c73-db5f-4ce5-8c38-105884bb9e5a",
   "id": "6",
   "meta": {
     "instanceId": "9eab64f66f430d2752e841d511cc7c2d87397ff6ea605c83e83ae63a5650b543"
