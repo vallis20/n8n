@@ -772,22 +772,11 @@
       ]
     },
     {
-      "parameters": {},
-      "id": "c2a64d03-60c8-4949-a39c-0cdcef108e28",
-      "name": "When clicking \"Execute Workflow\"",
-      "type": "n8n-nodes-base.manualTrigger",
-      "typeVersion": 1,
-      "position": [
-        1760,
-        1160
-      ]
-    },
-    {
       "parameters": {
         "authentication": "basicAuth",
-        "endpoint": "=https://b1ba016d6f3d08541490a71388849282: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@aventuramusica.myshopify.com/admin/api/2021-10/graphql.json",
+        "endpoint": "=https://{{ $json[\"API KEY\"] }}:{{ $json[\"API access token\"] }}@{{ $json[\"Store Name\"] }}.myshopify.com/admin/api/2021-10/graphql.json",
         "requestFormat": "json",
-        "query": "={\n  priceRules(first: 10) {\n    edges {\n      node {\n        id\n        title\n        startsAt\n        endsAt\n      }\n    }\n  }\n}\n",
+        "query": "=mutation {\n  discountCodeBasicCreate(basicCodeDiscount: {\n    title: \"Prueba1\",\n    code: \"MUSIC20\",\n    startsAt: \"2024-01-21T00:00:00Z\",\n    endsAt: \"2024-09-21T00:00:00Z\",\n    customerSelection: {\n      all: true\n    },\n    customerGets: {\n      value: {\n        percentage: 0.4\n      },\n      items: {\n        all: true\n      }\n    },\n    appliesOncePerCustomer: true\n  }) {\n    codeDiscountNode {\n      codeDiscount {\n        ... on DiscountCodeBasic {\n          title\n          codes(first: 10) {\n            nodes {\n              code\n            }\n          }\n          startsAt\n          endsAt\n          customerSelection {\n            ... on DiscountCustomerAll {\n              allCustomers\n            }\n          }\n          customerGets {\n            value {\n              ... on DiscountPercentage {\n                percentage\n              }\n            }\n            items {\n              ... on AllDiscountItems {\n                allItems\n              }\n            }\n          }\n          appliesOncePerCustomer\n        }\n      }\n    }\n    userErrors {\n      field\n      code\n      message\n    }\n  }\n}\n",
         "responseFormat": "string"
       },
       "id": "1572f3b2-4a42-43d7-b156-7706014d2f75",
@@ -795,8 +784,8 @@
       "type": "n8n-nodes-base.graphql",
       "typeVersion": 1,
       "position": [
-        1960,
-        1160
+        -360,
+        1980
       ],
       "credentials": {
         "httpBasicAuth": {
@@ -835,8 +824,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 1,
       "position": [
-        -340,
-        3320
+        -320,
+        3300
       ]
     },
     {
@@ -1450,17 +1439,6 @@
         ]
       ]
     },
-    "When clicking \"Execute Workflow\"": {
-      "main": [
-        [
-          {
-            "node": "GraphQL",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "Set1": {
       "main": [
         [
@@ -1521,6 +1499,11 @@
           },
           {
             "node": "Read Binary File5",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "GraphQL",
             "type": "main",
             "index": 0
           }
@@ -1585,7 +1568,7 @@
   },
   "active": false,
   "settings": {},
-  "versionId": "bc479c73-db5f-4ce5-8c38-105884bb9e5a",
+  "versionId": "abf97196-fdd0-4272-982c-44824fd71c90",
   "id": "6",
   "meta": {
     "instanceId": "9eab64f66f430d2752e841d511cc7c2d87397ff6ea605c83e83ae63a5650b543"
