@@ -3,7 +3,7 @@
   "nodes": [
     {
       "parameters": {
-        "fileName": "={{ $node.Set1.json[\"RUTA EN DONDE SE ENCUENTRAN LOS ARCHIVOS \"].CSV }}reports.csv",
+        "fileName": "={{ $node.Set1.json[\"name of your store where the \"][\"csv files are located on your computer\"] }}reports.csv",
         "options": {}
       },
       "id": "18f42c6d-8117-4100-9ea5-5014fe4608ca",
@@ -12,19 +12,6 @@
       "typeVersion": 1,
       "position": [
         1580,
-        4880
-      ]
-    },
-    {
-      "parameters": {
-        "options": {}
-      },
-      "id": "361a36c6-e0a0-472a-a8d3-f977040b6ae7",
-      "name": "Spreadsheet File26",
-      "type": "n8n-nodes-base.spreadsheetFile",
-      "typeVersion": 1,
-      "position": [
-        1360,
         4880
       ]
     },
@@ -41,7 +28,7 @@
     },
     {
       "parameters": {
-        "fileName": "={{ $node.Set1.json[\"RUTA EN DONDE SE ENCUENTRAN LOS ARCHIVOS \"].CSV }}marketing.csv",
+        "fileName": "={{ $node.Set1.json[\"name of your store where the \"][\"csv files are located on your computer\"] }}marketing.csv",
         "options": {}
       },
       "id": "af62761d-9fde-435e-ae22-fcac36fbc700",
@@ -55,7 +42,11 @@
     },
     {
       "parameters": {
-        "options": {}
+        "operation": "toFile",
+        "fileFormat": "csv",
+        "options": {
+          "fileName": "marketing.csv"
+        }
       },
       "id": "7700b8c2-2bf4-4288-9bd5-cf19ef4ef45f",
       "name": "Spreadsheet File25",
@@ -79,7 +70,7 @@
     },
     {
       "parameters": {
-        "fileName": "={{ $node.Set1.json[\"RUTA EN DONDE SE ENCUENTRAN LOS ARCHIVOS \"].CSV }}discounts.csv",
+        "fileName": "={{ $node.Set1.json[\"name of your store where the \"][\"csv files are located on your computer\"] }}discounts.csv",
         "options": {}
       },
       "id": "2468a140-848d-4cfb-9874-dd6b126abd61",
@@ -121,7 +112,7 @@
     },
     {
       "parameters": {
-        "fileName": "={{ $node.Set1.json[\"RUTA EN DONDE SE ENCUENTRAN LOS ARCHIVOS \"].CSV }}customers.csv",
+        "fileName": "={{ $node.Set1.json[\"name of your store where the \"][\"csv files are located on your computer\"] }}customers.csv",
         "options": {}
       },
       "id": "04200abe-dd86-4ab5-8f68-fb86a1455e3c",
@@ -163,7 +154,7 @@
     },
     {
       "parameters": {
-        "fileName": "={{ $node.Set1.json[\"RUTA EN DONDE SE ENCUENTRAN LOS ARCHIVOS \"].CSV }}products.csv",
+        "fileName": "={{ $node.Set1.json[\"name of your store where the \"][\"csv files are located on your computer\"] }}products.csv",
         "options": {}
       },
       "id": "65014bef-ec9a-46fc-ac35-26f9889283db",
@@ -200,7 +191,7 @@
     },
     {
       "parameters": {
-        "fileName": "={{ $node.Set1.json[\"RUTA EN DONDE SE ENCUENTRAN LOS ARCHIVOS \"].CSV }}orders.csv ",
+        "fileName": "={{ $node.Set1.json[\"name of your store where the \"][\"csv files are located on your computer\"] }}orders.csv ",
         "options": {
           "append": "={{ true }}"
         }
@@ -261,7 +252,7 @@
     },
     {
       "parameters": {
-        "content": "## Reports\nsolo falta agregar el que se actualice el archivo",
+        "content": "## Reports",
         "height": 106.32601599999995
       },
       "id": "533cb070-2d5a-45a6-b82f-3dd232866a91",
@@ -315,7 +306,7 @@
     },
     {
       "parameters": {
-        "filePath": "={{ $json[\"RUTA EN DONDE SE ENCUENTRAN LOS ARCHIVOS \"].CSV }}reports.csv"
+        "filePath": "={{ $json[\"name of your store where the \"][\"csv files are located on your computer\"] }}reports.csv"
       },
       "id": "7504cd07-f9b9-463f-bbb6-c24ecf1e1348",
       "name": "Read Binary File10",
@@ -342,7 +333,7 @@
     },
     {
       "parameters": {
-        "content": "## Marketing\nsolo falta agregar el que se actualice el archivo",
+        "content": "## Marketing\n",
         "height": 106.32601599999995
       },
       "id": "21047d9f-c2a2-4acc-9e52-b82fe70c89e5",
@@ -397,7 +388,7 @@
     },
     {
       "parameters": {
-        "filePath": "={{ $json[\"RUTA EN DONDE SE ENCUENTRAN LOS ARCHIVOS \"].CSV }}marketing.csv"
+        "filePath": "={{ $json[\"name of your store where the \"][\"csv files are located on your computer\"] }}marketing.csv"
       },
       "id": "43c261a9-438a-4d9b-b5c4-ec36832783e7",
       "name": "Read Binary File9",
@@ -438,7 +429,7 @@
     },
     {
       "parameters": {
-        "content": "## Discounts\nsolo falta agregar el que se actualice el archivo",
+        "content": "## Discounts\n",
         "height": 106.32601599999995
       },
       "id": "3234b72c-ecdc-4a7c-a37a-5d3af05ce7a2",
@@ -492,7 +483,7 @@
     },
     {
       "parameters": {
-        "filePath": "={{ $json[\"RUTA EN DONDE SE ENCUENTRAN LOS ARCHIVOS \"].CSV }}discounts.csv"
+        "filePath": "={{ $json[\"name of your store where the \"][\"csv files are located on your computer\"] }}discounts.csv"
       },
       "id": "8a125148-6ecb-4fd7-b09a-3b97350f8e3a",
       "name": "Read Binary File8",
@@ -505,7 +496,7 @@
     },
     {
       "parameters": {
-        "content": "## Customers\nsolo falta agregar el que se actualice el archivo",
+        "content": "## Customers\n",
         "height": 106.32601599999995
       },
       "id": "145d0e95-e4d0-418d-9423-759970d75159",
@@ -559,7 +550,7 @@
     },
     {
       "parameters": {
-        "filePath": "={{ $json[\"RUTA EN DONDE SE ENCUENTRAN LOS ARCHIVOS \"].CSV }}customers.csv"
+        "filePath": "={{ $json[\"name of your store where the \"][\"csv files are located on your computer\"] }}customers.csv"
       },
       "id": "dfdbd838-8c42-486b-897f-37f9711b37f1",
       "name": "Read Binary File7",
@@ -586,7 +577,7 @@
     },
     {
       "parameters": {
-        "content": "## Products \nsolo falta agregar el que se actualice el archivo",
+        "content": "## Products \n",
         "height": 106.32601599999995
       },
       "id": "787ebbe7-49f6-4587-874f-db29191e9d2f",
@@ -610,7 +601,7 @@
         660,
         2340
       ],
-      "alwaysOutputData": true
+      "alwaysOutputData": false
     },
     {
       "parameters": {
@@ -641,7 +632,7 @@
     },
     {
       "parameters": {
-        "filePath": "={{ $json[\"RUTA EN DONDE SE ENCUENTRAN LOS ARCHIVOS \"].CSV }}products.csv"
+        "filePath": "={{ $json[\"name of your store where the \"][\"csv files are located on your computer\"] }}products.csv"
       },
       "id": "d707a06b-e72c-450c-932e-96685c80b0e3",
       "name": "Read Binary File6",
@@ -708,7 +699,7 @@
     },
     {
       "parameters": {
-        "filePath": "={{ $json[\"RUTA EN DONDE SE ENCUENTRAN LOS ARCHIVOS \"].CSV }}orders.csv"
+        "filePath": "={{ $json[\"name of your store where the \"][\"csv files are located on your computer\"] }}orders.csv"
       },
       "id": "622a892c-ca6b-46d5-83dc-d49e44a5c10c",
       "name": "Read Binary File5",
@@ -773,29 +764,6 @@
     },
     {
       "parameters": {
-        "authentication": "basicAuth",
-        "endpoint": "=https://{{ $json[\"API KEY\"] }}:{{ $json[\"API access token\"] }}@{{ $json[\"Store Name\"] }}.myshopify.com/admin/api/2021-10/graphql.json",
-        "requestFormat": "json",
-        "query": "=mutation {\n  discountCodeBasicCreate(basicCodeDiscount: {\n    title: \"Prueba1\",\n    code: \"MUSIC20\",\n    startsAt: \"2024-01-21T00:00:00Z\",\n    endsAt: \"2024-09-21T00:00:00Z\",\n    customerSelection: {\n      all: true\n    },\n    customerGets: {\n      value: {\n        percentage: 0.4\n      },\n      items: {\n        all: true\n      }\n    },\n    appliesOncePerCustomer: true\n  }) {\n    codeDiscountNode {\n      codeDiscount {\n        ... on DiscountCodeBasic {\n          title\n          codes(first: 10) {\n            nodes {\n              code\n            }\n          }\n          startsAt\n          endsAt\n          customerSelection {\n            ... on DiscountCustomerAll {\n              allCustomers\n            }\n          }\n          customerGets {\n            value {\n              ... on DiscountPercentage {\n                percentage\n              }\n            }\n            items {\n              ... on AllDiscountItems {\n                allItems\n              }\n            }\n          }\n          appliesOncePerCustomer\n        }\n      }\n    }\n    userErrors {\n      field\n      code\n      message\n    }\n  }\n}\n",
-        "responseFormat": "string"
-      },
-      "id": "1572f3b2-4a42-43d7-b156-7706014d2f75",
-      "name": "GraphQL",
-      "type": "n8n-nodes-base.graphql",
-      "typeVersion": 1,
-      "position": [
-        -360,
-        1980
-      ],
-      "credentials": {
-        "httpBasicAuth": {
-          "id": "3",
-          "name": "Unnamed credential"
-        }
-      }
-    },
-    {
-      "parameters": {
         "keepOnlySet": true,
         "values": {
           "string": [
@@ -812,8 +780,8 @@
               "value": "aventuramusica"
             },
             {
-              "name": "RUTA EN DONDE SE ENCUENTRAN LOS ARCHIVOS .CSV",
-              "value": "/Users/vallisguerrero/Desktop/"
+              "name": "name of your store where the .csv files are located on your computer",
+              "value": "/Users/vallisguerrero/Desktop/shopify/"
             }
           ]
         },
@@ -932,26 +900,32 @@
         580,
         4760
       ]
+    },
+    {
+      "parameters": {
+        "operation": "toFile",
+        "fileFormat": "csv",
+        "options": {
+          "fileName": "marketing.csv"
+        }
+      },
+      "id": "937c0f08-cf83-4fb1-800b-7c057c63c440",
+      "name": "Spreadsheet File27",
+      "type": "n8n-nodes-base.spreadsheetFile",
+      "typeVersion": 1,
+      "position": [
+        1380,
+        4880
+      ]
     }
   ],
   "pinData": {},
   "connections": {
-    "Spreadsheet File26": {
-      "main": [
-        [
-          {
-            "node": "Write Binary File5",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "Merge6": {
       "main": [
         [
           {
-            "node": "Spreadsheet File26",
+            "node": "Spreadsheet File27",
             "type": "main",
             "index": 0
           }
@@ -1501,11 +1475,6 @@
             "node": "Read Binary File5",
             "type": "main",
             "index": 0
-          },
-          {
-            "node": "GraphQL",
-            "type": "main",
-            "index": 0
           }
         ]
       ]
@@ -1564,11 +1533,22 @@
           }
         ]
       ]
+    },
+    "Spreadsheet File27": {
+      "main": [
+        [
+          {
+            "node": "Write Binary File5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "active": false,
   "settings": {},
-  "versionId": "abf97196-fdd0-4272-982c-44824fd71c90",
+  "versionId": "5be864c4-fdfd-4d22-87a1-321e2dbc847a",
   "id": "6",
   "meta": {
     "instanceId": "9eab64f66f430d2752e841d511cc7c2d87397ff6ea605c83e83ae63a5650b543"
