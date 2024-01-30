@@ -162,7 +162,7 @@
       "type": "n8n-nodes-base.writeBinaryFile",
       "typeVersion": 1,
       "position": [
-        1220,
+        1640,
         2400
       ]
     },
@@ -173,8 +173,8 @@
       "type": "n8n-nodes-base.merge",
       "typeVersion": 2,
       "position": [
-        860,
-        2420
+        840,
+        2460
       ]
     },
     {
@@ -598,8 +598,8 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 1,
       "position": [
-        660,
-        2340
+        680,
+        2320
       ],
       "alwaysOutputData": false
     },
@@ -737,8 +737,8 @@
       "type": "n8n-nodes-base.spreadsheetFile",
       "typeVersion": 1,
       "position": [
-        1040,
-        2420
+        1420,
+        2440
       ]
     },
     {
@@ -769,15 +769,15 @@
           "string": [
             {
               "name": "API KEY",
-              "value": "b1ba016d6f3d08541490a71388849282"
+              "value": "0b2499ffded9c5cd0b52a4e57c3490e8"
             },
             {
               "name": "API access token",
-              "value": "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"
+              "value": "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"
             },
             {
               "name": "Store Name",
-              "value": "aventuramusica"
+              "value": "blackhatorganitation"
             },
             {
               "name": "name of your store where the .csv files are located on your computer",
@@ -917,6 +917,26 @@
         1380,
         4880
       ]
+    },
+    {
+      "parameters": {
+        "values": {
+          "string": [
+            {
+              "name": "id"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "8bdc4c64-ff66-4c86-a05f-93c28c6195ab",
+      "name": "Set7",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        1160,
+        2460
+      ]
     }
   ],
   "pinData": {},
@@ -1002,7 +1022,7 @@
       "main": [
         [
           {
-            "node": "Spreadsheet File",
+            "node": "Set7",
             "type": "main",
             "index": 0
           }
@@ -1544,11 +1564,22 @@
           }
         ]
       ]
+    },
+    "Set7": {
+      "main": [
+        [
+          {
+            "node": "Spreadsheet File",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "active": false,
   "settings": {},
-  "versionId": "5be864c4-fdfd-4d22-87a1-321e2dbc847a",
+  "versionId": "8481981a-41a1-43cb-8f79-1eeba672243f",
   "id": "6",
   "meta": {
     "instanceId": "9eab64f66f430d2752e841d511cc7c2d87397ff6ea605c83e83ae63a5650b543"
