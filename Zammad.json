@@ -1,0 +1,91 @@
+{
+  "name": "Zammad",
+  "nodes": [
+    {
+      "parameters": {
+        "operation": "toFile",
+        "fileFormat": "csv",
+        "options": {}
+      },
+      "id": "1fd4d15a-18fe-4365-a4d6-35ab2fb1e902",
+      "name": "Spreadsheet File",
+      "type": "n8n-nodes-base.spreadsheetFile",
+      "typeVersion": 1,
+      "position": [
+        1040,
+        360
+      ]
+    },
+    {
+      "parameters": {
+        "fileName": "\"File name\" ",
+        "options": {}
+      },
+      "id": "bfacec40-6918-4c90-bd07-a218f1b69111",
+      "name": "Write Binary File",
+      "type": "n8n-nodes-base.writeBinaryFile",
+      "typeVersion": 1,
+      "position": [
+        1460,
+        360
+      ]
+    },
+    {
+      "parameters": {
+        "authentication": "basicAuth",
+        "resource": "group",
+        "name": "Prueba1",
+        "additionalFields": {}
+      },
+      "name": "Create Group",
+      "type": "n8n-nodes-base.zammad",
+      "position": [
+        620,
+        360
+      ],
+      "notesInFlow": true,
+      "typeVersion": 1,
+      "id": "99aa174f-5040-42b9-853e-d38dcac5eb43",
+      "credentials": {
+        "zammadBasicAuthApi": {
+          "id": "4",
+          "name": "Zammad Basic Auth account"
+        }
+      },
+      "notes": "Get all tickets."
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Spreadsheet File": {
+      "main": [
+        [
+          {
+            "node": "Write Binary File",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Group": {
+      "main": [
+        [
+          {
+            "node": "Spreadsheet File",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {},
+  "versionId": "229b8b74-7a2b-45fc-b2b9-4b800a71f3f1",
+  "id": "9",
+  "meta": {
+    "instanceId": "9eab64f66f430d2752e841d511cc7c2d87397ff6ea605c83e83ae63a5650b543"
+  },
+  "tags": []
+}
